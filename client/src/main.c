@@ -3,7 +3,6 @@
 #include <game.h>
 #include <client.h>
 
-/* Enumeração para definir escolha do usuario */
 typedef enum opcao
 {
     jogo_local = 1, jogo_rede, sair

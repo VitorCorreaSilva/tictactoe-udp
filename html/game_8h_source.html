@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UDP Tic-Tac-Toe: Código-Fonte de client/include/game.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UDP Tic-Tac-Toe
+   </div>
+   <div id="projectbrief">Jogo da velha local ou remoto</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_db3a54907829b36871118d03417739cd.html">client</a></li><li class="navelem"><a class="el" href="dir_5c23080e296bbe846f4ed2d01d7b595d.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">game.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="game_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;ctype.h&gt;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="player_8h.html">player.h</a>&gt;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="board_8h.html">board.h</a>&gt;</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> <a class="code" href="game_8h.html#a5a57193f6315bcd5fea0e885f0bf6db1">PrintScore</a>(<span class="keywordtype">int</span> player1Wins, <span class="keywordtype">int</span> player2Wins, <span class="keywordtype">int</span> draws, <span class="keywordtype">char</span> *player1Name, <span class="keywordtype">char</span> *player2Name);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="game_8h.html#a89454db40f4a9bfe3fb5fc79ce8bc195">PrintWinner</a>(<span class="keywordtype">char</span> *playerCharacter, <span class="keywordtype">char</span> *player1Name, <span class="keywordtype">char</span> *player2Name, <span class="keywordtype">int</span> check);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="game_8h.html#ae80136af61d48d4dab91ce44f35f2227">PlayAgain</a>(<span class="keywordtype">int</span> *newGame);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> <a class="code" href="game_8h.html#aba7968c984d7d14474110db10edbe709">StartGame</a>(<span class="keywordtype">int</span> numberOfPlayers);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">int</span> <a class="code" href="game_8h.html#ade84e17876e747904e3cc149c9d9d18a">AIPlay</a>(<span class="keywordtype">char</span> gameBoard[9], <span class="keywordtype">int</span> *chosenNumber);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span> <a class="code" href="game_8h.html#a8c0cdcbaba5c3fc48e068d3969d264ad">PlayerStart</a>(<span class="keywordtype">char</span> *playerCharacter, <span class="keywordtype">int</span> *playerTurn, <span class="keywordtype">int</span> numberOfPlayers, <span class="keywordtype">char</span> *player1Name, <span class="keywordtype">char</span> *player2Name);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">void</span> <a class="code" href="game_8h.html#ac930428cd81e07f378593efa99b169e9">UpdateScores</a>(<span class="keywordtype">int</span> check, <span class="keywordtype">char</span> *playerCharacter, <span class="keywordtype">int</span> *player1Wins, <span class="keywordtype">int</span> *player2Wins, <span class="keywordtype">int</span> *draws, <span class="keywordtype">char</span> gameBoard[9]);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> <a class="code" href="game_8h.html#a5b51b82ff890b5f0c120cf42b1c5b04b">PlayGame</a>(<span class="keywordtype">char</span> *player1Name, <span class="keywordtype">char</span> *player2Name, <span class="keywordtype">int</span> numberOfPlayers);</div><div class="ttc" id="game_8h_html_aba7968c984d7d14474110db10edbe709"><div class="ttname"><a href="game_8h.html#aba7968c984d7d14474110db10edbe709">StartGame</a></div><div class="ttdeci">void StartGame(int numberOfPlayers)</div><div class="ttdoc">Começar uma partida. </div><div class="ttdef"><b>Definition:</b> game.c:52</div></div>
+<div class="ttc" id="game_8h_html_ade84e17876e747904e3cc149c9d9d18a"><div class="ttname"><a href="game_8h.html#ade84e17876e747904e3cc149c9d9d18a">AIPlay</a></div><div class="ttdeci">int AIPlay(char gameBoard[9], int *chosenNumber)</div><div class="ttdoc">Jogada do computador. </div><div class="ttdef"><b>Definition:</b> game.c:82</div></div>
+<div class="ttc" id="game_8h_html_a8c0cdcbaba5c3fc48e068d3969d264ad"><div class="ttname"><a href="game_8h.html#a8c0cdcbaba5c3fc48e068d3969d264ad">PlayerStart</a></div><div class="ttdeci">void PlayerStart(char *playerCharacter, int *playerTurn, int numberOfPlayers, char *player1Name, char *player2Name)</div><div class="ttdoc">Definir primeiro jogador. </div><div class="ttdef"><b>Definition:</b> game.c:96</div></div>
+<div class="ttc" id="player_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div><div class="ttdoc">Arquivo contendo cabeçalhos de funções que implementam as funções do player. </div></div>
+<div class="ttc" id="game_8h_html_ac930428cd81e07f378593efa99b169e9"><div class="ttname"><a href="game_8h.html#ac930428cd81e07f378593efa99b169e9">UpdateScores</a></div><div class="ttdeci">void UpdateScores(int check, char *playerCharacter, int *player1Wins, int *player2Wins, int *draws, char gameBoard[9])</div><div class="ttdoc">Atualiza o marcador de pontos. </div><div class="ttdef"><b>Definition:</b> game.c:125</div></div>
+<div class="ttc" id="game_8h_html_a5b51b82ff890b5f0c120cf42b1c5b04b"><div class="ttname"><a href="game_8h.html#a5b51b82ff890b5f0c120cf42b1c5b04b">PlayGame</a></div><div class="ttdeci">void PlayGame(char *player1Name, char *player2Name, int numberOfPlayers)</div><div class="ttdoc">Implementa o jogo e suas funções. </div><div class="ttdef"><b>Definition:</b> game.c:147</div></div>
+<div class="ttc" id="game_8h_html_ae80136af61d48d4dab91ce44f35f2227"><div class="ttname"><a href="game_8h.html#ae80136af61d48d4dab91ce44f35f2227">PlayAgain</a></div><div class="ttdeci">void PlayAgain(int *newGame)</div><div class="ttdoc">Verificar nova partida. </div><div class="ttdef"><b>Definition:</b> game.c:32</div></div>
+<div class="ttc" id="game_8h_html_a89454db40f4a9bfe3fb5fc79ce8bc195"><div class="ttname"><a href="game_8h.html#a89454db40f4a9bfe3fb5fc79ce8bc195">PrintWinner</a></div><div class="ttdeci">void PrintWinner(char *playerCharacter, char *player1Name, char *player2Name, int check)</div><div class="ttdoc">Mostrar a nome do vencedor. </div><div class="ttdef"><b>Definition:</b> game.c:12</div></div>
+<div class="ttc" id="game_8h_html_a5a57193f6315bcd5fea0e885f0bf6db1"><div class="ttname"><a href="game_8h.html#a5a57193f6315bcd5fea0e885f0bf6db1">PrintScore</a></div><div class="ttdeci">void PrintScore(int player1Wins, int player2Wins, int draws, char *player1Name, char *player2Name)</div><div class="ttdoc">Mostrar a pontuação. </div><div class="ttdef"><b>Definition:</b> game.c:3</div></div>
+<div class="ttc" id="board_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div><div class="ttdoc">Arquivo contendo as estruturas e cabeçalhos de funções do tabuleiro. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

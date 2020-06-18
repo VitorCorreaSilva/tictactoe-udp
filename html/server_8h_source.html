@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UDP Tic-Tac-Toe: Código-Fonte de server/include/server.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UDP Tic-Tac-Toe
+   </div>
+   <div id="projectbrief">Jogo da velha local ou remoto</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_41e1742e44e2de38b3bc91f993fed282.html">server</a></li><li class="navelem"><a class="el" href="dir_2b32f7736d6a65027d17676f6279053c.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">server.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="server_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define TAM_MSG 1024</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define NRO_PARTIDAS_SIMULTANEAS 1000 </span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">   34</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>sockaddr_in <a class="code" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structreceived__message.html">   42</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structreceived__message.html">received_message</a></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structreceived__message.html#ada9c34d3c26df419fa3dd0ac2c20e860">   44</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structreceived__message.html#ada9c34d3c26df419fa3dd0ac2c20e860">data</a>[TAM_MSG]; </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structreceived__message.html#ad56a4c16bef95bef52ac591efe2582ec">   45</a></span>&#160;    <a class="code" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a> <a class="code" href="structreceived__message.html#ad56a4c16bef95bef52ac591efe2582ec">client_addr</a>; </div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}<a class="code" href="server_8h.html#a23f9916b5a27f1dfc760d6a01e0f4bd4">ReceivedMessage</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structplayer.html">   55</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structplayer.html">player</a></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structplayer.html#a0e6fb0e744015cdf9f4dd12164a1dbaa">   57</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="structplayer.html#a0e6fb0e744015cdf9f4dd12164a1dbaa">id</a>; </div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structplayer.html#a6db5a6f2e823dfebcbc3548bfb4bda99">   58</a></span>&#160;    <span class="keywordtype">char</span> name[64]; </div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structplayer.html#a7b6c5d24a563be91d800cd5ed7d639e1">   59</a></span>&#160;    <a class="code" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a> <a class="code" href="structplayer.html#a7b6c5d24a563be91d800cd5ed7d639e1">addr</a>; </div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}<a class="code" href="server_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structgame.html">   70</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structgame.html">game</a></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structgame.html#a61d36a149f0d4d23b4ec8bff3a256d9f">   72</a></span>&#160;    <a class="code" href="structplayer.html">Player</a> players[2]; </div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structgame.html#a92e543c2bad8ce842e762eb639b7ae66">   73</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="structgame.html#a92e543c2bad8ce842e762eb639b7ae66">number_of_players</a>; </div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structgame.html#aa1fa2aa40af4537744fa6b0a0ae4227c">   74</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structgame.html#aa1fa2aa40af4537744fa6b0a0ae4227c">first_player</a>; </div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}<a class="code" href="server_8h.html#a4ec25c3351f43b6c631aedeb9e14d46a">Game</a>;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">int</span> <a class="code" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748">create_socket</a>(<span class="keywordtype">int</span> port);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<a class="code" href="structreceived__message.html">ReceivedMessage</a> <a class="code" href="server_8h.html#a13a547b23638fcaac00857870c985aa7">receive_message</a>(<span class="keywordtype">int</span> sockfd);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keywordtype">int</span> <a class="code" href="server_8h.html#a1ab0d52a5f583e6f915a9dba47c951dd">rand_range</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="keywordtype">void</span> <a class="code" href="server_8h.html#af53a5f77518d295f38d03401c8f5e941">send_message</a>(<span class="keywordtype">int</span> socket, <span class="keywordtype">char</span> *msg, <a class="code" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a> <a class="code" href="structreceived__message.html#ad56a4c16bef95bef52ac591efe2582ec">client_addr</a>);</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keywordtype">void</span> <a class="code" href="server_8h.html#a384b9bb4702634b169c470efe0c867cb">wait_for_login</a>( <span class="keywordtype">int</span> socket );</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keywordtype">int</span> <a class="code" href="server_8h.html#a0bb0e3e1429bfea5bd877ee3ee42c92c">init_server</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div><div class="ttc" id="server_8h_html_a13a547b23638fcaac00857870c985aa7"><div class="ttname"><a href="server_8h.html#a13a547b23638fcaac00857870c985aa7">receive_message</a></div><div class="ttdeci">ReceivedMessage receive_message(int sockfd)</div><div class="ttdoc">Espera pela chegada de uma mensagem em um socket. </div><div class="ttdef"><b>Definition:</b> client.c:38</div></div>
+<div class="ttc" id="server_8h_html_a9c8780378078e51e7c9041cbac392db9"><div class="ttname"><a href="server_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a></div><div class="ttdeci">struct player Player</div><div class="ttdoc">Jogador conectado. </div></div>
+<div class="ttc" id="structplayer_html_a0e6fb0e744015cdf9f4dd12164a1dbaa"><div class="ttname"><a href="structplayer.html#a0e6fb0e744015cdf9f4dd12164a1dbaa">player::id</a></div><div class="ttdeci">unsigned short id</div><div class="ttdef"><b>Definition:</b> server.h:57</div></div>
+<div class="ttc" id="server_8h_html_a7e53f8b1219135aed66d02cb58357748"><div class="ttname"><a href="server_8h.html#a7e53f8b1219135aed66d02cb58357748">create_socket</a></div><div class="ttdeci">int create_socket(int port)</div><div class="ttdoc">Cria um socket udp. </div></div>
+<div class="ttc" id="server_8h_html_a23f9916b5a27f1dfc760d6a01e0f4bd4"><div class="ttname"><a href="server_8h.html#a23f9916b5a27f1dfc760d6a01e0f4bd4">ReceivedMessage</a></div><div class="ttdeci">struct received_message ReceivedMessage</div><div class="ttdoc">Mensagem recebida. </div></div>
+<div class="ttc" id="server_8h_html_a4ec25c3351f43b6c631aedeb9e14d46a"><div class="ttname"><a href="server_8h.html#a4ec25c3351f43b6c631aedeb9e14d46a">Game</a></div><div class="ttdeci">struct game Game</div><div class="ttdoc">Partida de tic-tac-toe. </div></div>
+<div class="ttc" id="structgame_html_aa1fa2aa40af4537744fa6b0a0ae4227c"><div class="ttname"><a href="structgame.html#aa1fa2aa40af4537744fa6b0a0ae4227c">game::first_player</a></div><div class="ttdeci">int first_player</div><div class="ttdef"><b>Definition:</b> server.h:74</div></div>
+<div class="ttc" id="structgame_html"><div class="ttname"><a href="structgame.html">game</a></div><div class="ttdef"><b>Definition:</b> server.h:70</div></div>
+<div class="ttc" id="structreceived__message_html_ada9c34d3c26df419fa3dd0ac2c20e860"><div class="ttname"><a href="structreceived__message.html#ada9c34d3c26df419fa3dd0ac2c20e860">received_message::data</a></div><div class="ttdeci">char data[TAM_MSG]</div><div class="ttdef"><b>Definition:</b> server.h:44</div></div>
+<div class="ttc" id="server_8h_html_a384b9bb4702634b169c470efe0c867cb"><div class="ttname"><a href="server_8h.html#a384b9bb4702634b169c470efe0c867cb">wait_for_login</a></div><div class="ttdeci">void wait_for_login(int socket)</div><div class="ttdoc">Realiza a espera por logins no servidor. </div></div>
+<div class="ttc" id="structplayer_html_a7b6c5d24a563be91d800cd5ed7d639e1"><div class="ttname"><a href="structplayer.html#a7b6c5d24a563be91d800cd5ed7d639e1">player::addr</a></div><div class="ttdeci">Sockaddr addr</div><div class="ttdef"><b>Definition:</b> server.h:59</div></div>
+<div class="ttc" id="server_8h_html_af53a5f77518d295f38d03401c8f5e941"><div class="ttname"><a href="server_8h.html#af53a5f77518d295f38d03401c8f5e941">send_message</a></div><div class="ttdeci">void send_message(int socket, char *msg, Sockaddr client_addr)</div><div class="ttdoc">Envia uma mensagem para um endereço via socket udp. </div></div>
+<div class="ttc" id="structgame_html_a92e543c2bad8ce842e762eb639b7ae66"><div class="ttname"><a href="structgame.html#a92e543c2bad8ce842e762eb639b7ae66">game::number_of_players</a></div><div class="ttdeci">unsigned short number_of_players</div><div class="ttdef"><b>Definition:</b> server.h:73</div></div>
+<div class="ttc" id="structreceived__message_html_ad56a4c16bef95bef52ac591efe2582ec"><div class="ttname"><a href="structreceived__message.html#ad56a4c16bef95bef52ac591efe2582ec">received_message::client_addr</a></div><div class="ttdeci">Sockaddr client_addr</div><div class="ttdef"><b>Definition:</b> server.h:45</div></div>
+<div class="ttc" id="structreceived__message_html"><div class="ttname"><a href="structreceived__message.html">received_message</a></div><div class="ttdef"><b>Definition:</b> server.h:42</div></div>
+<div class="ttc" id="server_8h_html_a2645d40a71683d956e55bcf7a6823530"><div class="ttname"><a href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a></div><div class="ttdeci">struct sockaddr_in Sockaddr</div><div class="ttdoc">Endereço Remoto. </div><div class="ttdef"><b>Definition:</b> server.h:34</div></div>
+<div class="ttc" id="structplayer_html"><div class="ttname"><a href="structplayer.html">player</a></div><div class="ttdef"><b>Definition:</b> server.h:55</div></div>
+<div class="ttc" id="server_8h_html_a0bb0e3e1429bfea5bd877ee3ee42c92c"><div class="ttname"><a href="server_8h.html#a0bb0e3e1429bfea5bd877ee3ee42c92c">init_server</a></div><div class="ttdeci">int init_server(void)</div><div class="ttdoc">Realiza a inicialização do servidor. </div></div>
+<div class="ttc" id="server_8h_html_a1ab0d52a5f583e6f915a9dba47c951dd"><div class="ttname"><a href="server_8h.html#a1ab0d52a5f583e6f915a9dba47c951dd">rand_range</a></div><div class="ttdeci">int rand_range(int min, int max)</div><div class="ttdoc">Gerador de número aleatório dentro de um intervalo. </div><div class="ttdef"><b>Definition:</b> client.c:67</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,236 @@
+\begin{theindex}
+
+  \item {A\+I\+Play}
+    \subitem {game.\+h}, \hyperpage{20}
+  \item {addr}
+    \subitem {player}, \hyperpage{7}
+
+  \indexspace
+
+  \item {board.\+h}
+    \subitem {Check\+Player\+Win}, \hyperpage{10}
+    \subitem {check\+Valid\+Play}, \hyperpage{11}
+    \subitem {clear\+\_\+screen}, \hyperpage{11}
+    \subitem {Draw\+Board}, \hyperpage{11}
+    \subitem {Draw\+Board\+With\+Names}, \hyperpage{12}
+
+  \indexspace
+
+  \item {Change\+Player}
+    \subitem {player.\+h}, \hyperpage{26}
+  \item {Check\+Player\+Win}
+    \subitem {board.\+h}, \hyperpage{10}
+  \item {check\+Valid\+Play}
+    \subitem {board.\+h}, \hyperpage{11}
+  \item {clear\+\_\+screen}
+    \subitem {board.\+h}, \hyperpage{11}
+  \item {clear\+\_\+stdin}
+    \subitem {client.\+h}, \hyperpage{14}
+  \item {client.\+h}
+    \subitem {clear\+\_\+stdin}, \hyperpage{14}
+    \subitem {create\+\_\+client\+\_\+socket}, \hyperpage{14}
+    \subitem {disconnect}, \hyperpage{15}
+    \subitem {envia\+\_\+mensagem}, \hyperpage{15}
+    \subitem {login}, \hyperpage{16}
+    \subitem {Mensagem}, \hyperpage{14}
+    \subitem {rand\+\_\+range}, \hyperpage{17}
+    \subitem {receive\+\_\+message}, \hyperpage{17}
+  \item {client/include/board.\+h}, \hyperpage{9}
+  \item {client/include/client.\+h}, \hyperpage{12}
+  \item {client/include/game.\+h}, \hyperpage{18}
+  \item {client/include/menu.\+h}, \hyperpage{23}
+  \item {client/include/player.\+h}, \hyperpage{25}
+  \item {client\+\_\+addr}
+    \subitem {messagem}, \hyperpage{6}
+    \subitem {received\+\_\+message}, \hyperpage{7}
+  \item {client\+\_\+connection\+\_\+thread}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{28}
+  \item {client\+\_\+thread.\+h}
+    \subitem {client\+\_\+connection\+\_\+thread}, \hyperpage{28}
+    \subitem {init\+\_\+shared\+\_\+variables}, \hyperpage{29}
+    \subitem {insert\+\_\+player\+\_\+in\+\_\+game}, \hyperpage{30}
+    \subitem {leave\+\_\+game}, \hyperpage{30}
+    \subitem {search\+\_\+for\+\_\+available\+\_\+game}, \hyperpage{31}
+    \subitem {start\+\_\+remote\+\_\+tictactoe\+\_\+game}, 
+		\hyperpage{31}
+    \subitem {wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect}, 
+		\hyperpage{32}
+    \subitem {write\+\_\+in\+\_\+file\+\_\+ranking}, \hyperpage{32}
+  \item {create\+\_\+client\+\_\+socket}
+    \subitem {client.\+h}, \hyperpage{14}
+  \item {create\+\_\+socket}
+    \subitem {server.\+h}, \hyperpage{35}
+
+  \indexspace
+
+  \item {data}
+    \subitem {messagem}, \hyperpage{6}
+    \subitem {received\+\_\+message}, \hyperpage{8}
+  \item {disconnect}
+    \subitem {client.\+h}, \hyperpage{15}
+  \item {Draw\+Board}
+    \subitem {board.\+h}, \hyperpage{11}
+  \item {Draw\+Board\+With\+Names}
+    \subitem {board.\+h}, \hyperpage{12}
+
+  \indexspace
+
+  \item {envia\+\_\+mensagem}
+    \subitem {client.\+h}, \hyperpage{15}
+
+  \indexspace
+
+  \item {first\+\_\+player}
+    \subitem {game}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Game}
+    \subitem {server.\+h}, \hyperpage{34}
+  \item {game}, \hyperpage{5}
+    \subitem {first\+\_\+player}, \hyperpage{5}
+    \subitem {number\+\_\+of\+\_\+players}, \hyperpage{5}
+    \subitem {players}, \hyperpage{6}
+  \item {game.\+h}
+    \subitem {A\+I\+Play}, \hyperpage{20}
+    \subitem {Play\+Again}, \hyperpage{20}
+    \subitem {Play\+Game}, \hyperpage{21}
+    \subitem {Player\+Start}, \hyperpage{20}
+    \subitem {Print\+Score}, \hyperpage{21}
+    \subitem {Print\+Winner}, \hyperpage{22}
+    \subitem {Start\+Game}, \hyperpage{22}
+    \subitem {Update\+Scores}, \hyperpage{22}
+  \item {Get\+Number\+Of\+Players}
+    \subitem {player.\+h}, \hyperpage{26}
+  \item {Get\+Player\+Name}
+    \subitem {player.\+h}, \hyperpage{27}
+
+  \indexspace
+
+  \item {id}
+    \subitem {player}, \hyperpage{7}
+  \item {init\+\_\+server}
+    \subitem {server.\+h}, \hyperpage{36}
+  \item {init\+\_\+shared\+\_\+variables}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{29}
+  \item {insert\+\_\+player\+\_\+in\+\_\+game}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {leave\+\_\+game}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{30}
+  \item {login}
+    \subitem {client.\+h}, \hyperpage{16}
+
+  \indexspace
+
+  \item {main}
+    \subitem {server.\+c}, \hyperpage{41}
+  \item {Mensagem}
+    \subitem {client.\+h}, \hyperpage{14}
+  \item {menu.\+h}
+    \subitem {Menu\+Choice}, \hyperpage{24}
+    \subitem {Show\+Menu}, \hyperpage{25}
+  \item {Menu\+Choice}
+    \subitem {menu.\+h}, \hyperpage{24}
+  \item {messagem}, \hyperpage{6}
+    \subitem {client\+\_\+addr}, \hyperpage{6}
+    \subitem {data}, \hyperpage{6}
+
+  \indexspace
+
+  \item {name}
+    \subitem {player}, \hyperpage{7}
+  \item {number\+\_\+of\+\_\+players}
+    \subitem {game}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Play\+Again}
+    \subitem {game.\+h}, \hyperpage{20}
+  \item {Play\+Game}
+    \subitem {game.\+h}, \hyperpage{21}
+  \item {Player}
+    \subitem {server.\+h}, \hyperpage{35}
+  \item {player}, \hyperpage{7}
+    \subitem {addr}, \hyperpage{7}
+    \subitem {id}, \hyperpage{7}
+    \subitem {name}, \hyperpage{7}
+  \item {player.\+h}
+    \subitem {Change\+Player}, \hyperpage{26}
+    \subitem {Get\+Number\+Of\+Players}, \hyperpage{26}
+    \subitem {Get\+Player\+Name}, \hyperpage{27}
+  \item {Player\+Start}
+    \subitem {game.\+h}, \hyperpage{20}
+  \item {players}
+    \subitem {game}, \hyperpage{6}
+  \item {Print\+Score}
+    \subitem {game.\+h}, \hyperpage{21}
+  \item {Print\+Winner}
+    \subitem {game.\+h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {rand\+\_\+range}
+    \subitem {client.\+h}, \hyperpage{17}
+    \subitem {server.\+h}, \hyperpage{36}
+  \item {receive\+\_\+message}
+    \subitem {client.\+h}, \hyperpage{17}
+    \subitem {server.\+h}, \hyperpage{37}
+  \item {received\+\_\+message}, \hyperpage{7}
+    \subitem {client\+\_\+addr}, \hyperpage{7}
+    \subitem {data}, \hyperpage{8}
+  \item {Received\+Message}
+    \subitem {server.\+h}, \hyperpage{35}
+
+  \indexspace
+
+  \item {search\+\_\+for\+\_\+available\+\_\+game}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{31}
+  \item {send\+\_\+message}
+    \subitem {server.\+h}, \hyperpage{37}
+  \item {server.\+c}
+    \subitem {main}, \hyperpage{41}
+    \subitem {show\+\_\+usage}, \hyperpage{41}
+  \item {server.\+h}
+    \subitem {create\+\_\+socket}, \hyperpage{35}
+    \subitem {Game}, \hyperpage{34}
+    \subitem {init\+\_\+server}, \hyperpage{36}
+    \subitem {Player}, \hyperpage{35}
+    \subitem {rand\+\_\+range}, \hyperpage{36}
+    \subitem {receive\+\_\+message}, \hyperpage{37}
+    \subitem {Received\+Message}, \hyperpage{35}
+    \subitem {send\+\_\+message}, \hyperpage{37}
+    \subitem {Sockaddr}, \hyperpage{35}
+    \subitem {wait\+\_\+for\+\_\+login}, \hyperpage{38}
+  \item {server/include/client\+\_\+thread.\+h}, \hyperpage{27}
+  \item {server/include/server.\+h}, \hyperpage{33}
+  \item {server/src/client\+\_\+thread.\+c}, \hyperpage{39}
+  \item {server/src/server.\+c}, \hyperpage{40}
+  \item {show\+\_\+usage}
+    \subitem {server.\+c}, \hyperpage{41}
+  \item {Show\+Menu}
+    \subitem {menu.\+h}, \hyperpage{25}
+  \item {Sockaddr}
+    \subitem {server.\+h}, \hyperpage{35}
+  \item {start\+\_\+remote\+\_\+tictactoe\+\_\+game}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{31}
+  \item {Start\+Game}
+    \subitem {game.\+h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {Update\+Scores}
+    \subitem {game.\+h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{32}
+  \item {wait\+\_\+for\+\_\+login}
+    \subitem {server.\+h}, \hyperpage{38}
+  \item {write\+\_\+in\+\_\+file\+\_\+ranking}
+    \subitem {client\+\_\+thread.\+h}, \hyperpage{32}
+
+\end{theindex}

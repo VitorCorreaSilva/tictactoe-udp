@@ -1,0 +1,144 @@
+\hypertarget{board_8h}{}\section{Referência do Arquivo client/include/board.h}
+\label{board_8h}\index{client/include/board.\+h@{client/include/board.\+h}}
+
+
+Arquivo contendo as estruturas e cabeçalhos de funções do tabuleiro.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Gráfico de dependência de inclusões para board.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{board_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{board_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{board_8h_a59e294ac28318369e0f8c7e50c6ae488}{Draw\+Board} (char game\+Board\mbox{[}9\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constroi o tabuleiro do jogo. \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_abb7dab68efbd40aaffe686a1b65eb6ce}{Draw\+Board\+With\+Names} (char game\+Board\mbox{[}9\mbox{]}, char $\ast$player1\+Name, char $\ast$player2\+Name, char $\ast$player\+Character)
+\begin{DoxyCompactList}\small\item\em Constroi o tabuleiro do jogo. \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a8faf24edc7214b49027b34cdae00293d}{Check\+Player\+Win} (char game\+Board\mbox{[}9\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constroi o tabuleiro do jogo. \end{DoxyCompactList}\item 
+int \hyperlink{board_8h_a04497f61d533bce8e10181d659317f65}{check\+Valid\+Play} (char $\ast$game\+Board, int position)
+\begin{DoxyCompactList}\small\item\em Verifica a jogada. \end{DoxyCompactList}\item 
+void \hyperlink{board_8h_abc40cd622f423abf44084c8f8595f57f}{clear\+\_\+screen} (void)
+\begin{DoxyCompactList}\small\item\em Limpa a tela. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo contendo as estruturas e cabeçalhos de funções do tabuleiro. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020
+\end{DoxyDate}
+Esse arquivo contém as definições das funções que são implementadas em board.\+c. Essas funções tem como objetivo implementar o tabuleiro do jogo e suas especificações. 
+
+\subsection{Funções}
+\mbox{\Hypertarget{board_8h_a8faf24edc7214b49027b34cdae00293d}\label{board_8h_a8faf24edc7214b49027b34cdae00293d}} 
+\index{board.\+h@{board.\+h}!Check\+Player\+Win@{Check\+Player\+Win}}
+\index{Check\+Player\+Win@{Check\+Player\+Win}!board.\+h@{board.\+h}}
+\subsubsection{\texorpdfstring{Check\+Player\+Win()}{CheckPlayerWin()}}
+{\footnotesize\ttfamily int Check\+Player\+Win (\begin{DoxyParamCaption}\item[{char}]{game\+Board\mbox{[}9\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Constroi o tabuleiro do jogo. 
+
+Verifica se houve uma vitoria (1), empate (2) ou se o jogo continua (0)
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+Board} & Array de 9 posições que guarda as informações do tabuleiro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} Verifica se a jogada foi a vencedora 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a04497f61d533bce8e10181d659317f65}\label{board_8h_a04497f61d533bce8e10181d659317f65}} 
+\index{board.\+h@{board.\+h}!check\+Valid\+Play@{check\+Valid\+Play}}
+\index{check\+Valid\+Play@{check\+Valid\+Play}!board.\+h@{board.\+h}}
+\subsubsection{\texorpdfstring{check\+Valid\+Play()}{checkValidPlay()}}
+{\footnotesize\ttfamily int check\+Valid\+Play (\begin{DoxyParamCaption}\item[{char $\ast$}]{game\+Board,  }\item[{int}]{position }\end{DoxyParamCaption})}
+
+
+
+Verifica a jogada. 
+
+Verifica se a jogada feita é valida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+Board} & Array de 9 posições que guarda as informações do tabuleiro \\
+\hline
+{\em position} & Valor da possivel jogada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} retorna a jogada feita se for valida 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_abc40cd622f423abf44084c8f8595f57f}\label{board_8h_abc40cd622f423abf44084c8f8595f57f}} 
+\index{board.\+h@{board.\+h}!clear\+\_\+screen@{clear\+\_\+screen}}
+\index{clear\+\_\+screen@{clear\+\_\+screen}!board.\+h@{board.\+h}}
+\subsubsection{\texorpdfstring{clear\+\_\+screen()}{clear\_screen()}}
+{\footnotesize\ttfamily void clear\+\_\+screen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Limpa a tela. 
+
+Implementa função para lipar a tela. \mbox{\Hypertarget{board_8h_a59e294ac28318369e0f8c7e50c6ae488}\label{board_8h_a59e294ac28318369e0f8c7e50c6ae488}} 
+\index{board.\+h@{board.\+h}!Draw\+Board@{Draw\+Board}}
+\index{Draw\+Board@{Draw\+Board}!board.\+h@{board.\+h}}
+\subsubsection{\texorpdfstring{Draw\+Board()}{DrawBoard()}}
+{\footnotesize\ttfamily void Draw\+Board (\begin{DoxyParamCaption}\item[{char}]{game\+Board\mbox{[}9\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Constroi o tabuleiro do jogo. 
+
+Limpa a tela e desenha o tabuleiro de jogo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+Board} & Array de 9 posições que guarda as informações do tabuleiro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_8h_abb7dab68efbd40aaffe686a1b65eb6ce}\label{board_8h_abb7dab68efbd40aaffe686a1b65eb6ce}} 
+\index{board.\+h@{board.\+h}!Draw\+Board\+With\+Names@{Draw\+Board\+With\+Names}}
+\index{Draw\+Board\+With\+Names@{Draw\+Board\+With\+Names}!board.\+h@{board.\+h}}
+\subsubsection{\texorpdfstring{Draw\+Board\+With\+Names()}{DrawBoardWithNames()}}
+{\footnotesize\ttfamily void Draw\+Board\+With\+Names (\begin{DoxyParamCaption}\item[{char}]{game\+Board\mbox{[}9\mbox{]},  }\item[{char $\ast$}]{player1\+Name,  }\item[{char $\ast$}]{player2\+Name,  }\item[{char $\ast$}]{player\+Character }\end{DoxyParamCaption})}
+
+
+
+Constroi o tabuleiro do jogo. 
+
+Limpa a tela, desenha o tabuleiro e informa de qual jogador é a vez.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+Board} & Array de 9 posições que guarda as informações do tabuleiro \\
+\hline
+{\em player1\+Name} & Nome do jogador numero 1 \\
+\hline
+{\em player2\+Name} & Nome do jogador numero 2 \\
+\hline
+{\em player\+Character} & Caractere do jogador atual \\
+\hline
+\end{DoxyParams}

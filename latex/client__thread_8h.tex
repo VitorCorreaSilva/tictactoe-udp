@@ -1,0 +1,279 @@
+\hypertarget{client__thread_8h}{}\section{Referência do Arquivo server/include/client\+\_\+thread.h}
+\label{client__thread_8h}\index{server/include/client\+\_\+thread.\+h@{server/include/client\+\_\+thread.\+h}}
+
+
+Arquivo contendo cabeçalhos de funções que implementam as interações do servidor com os clientes conectados.  
+
+
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{client__thread_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{client__thread_8h_ac99ae6be8f999a0293faad128a6ab850}\label{client__thread_8h_ac99ae6be8f999a0293faad128a6ab850}} 
+\#define {\bfseries T\+A\+M\+\_\+\+J\+O\+G\+A\+DA}~1089
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{client__thread_8h_aa54065880f42cda8bec65d90455adda0}{init\+\_\+shared\+\_\+variables} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa as variáveis compartilhadas. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{client__thread_8h_a86e63437485b25c41bbb1f60486084e9}{client\+\_\+connection\+\_\+thread} (void $\ast$client\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Thread de conexão dedicada a um cliente. \end{DoxyCompactList}\item 
+void \hyperlink{client__thread_8h_ac6bc41cb445fb65d6e0f6d5740789cb4}{start\+\_\+remote\+\_\+tictactoe\+\_\+game} (int socket, \hyperlink{server_8h_a9c8780378078e51e7c9041cbac392db9}{Player} p, unsigned short game\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Inicia uma partida de tic-\/tac-\/toe com o jogador indicado. \end{DoxyCompactList}\item 
+int \hyperlink{client__thread_8h_a0c2a40bfec08e5623244ec2377b5cfff}{search\+\_\+for\+\_\+available\+\_\+game} (void)
+\begin{DoxyCompactList}\small\item\em Procura por um jogo com vagas abertas. \end{DoxyCompactList}\item 
+int \hyperlink{client__thread_8h_a28fe4040784cc676e1d0a757cdb02628}{insert\+\_\+player\+\_\+in\+\_\+game} (\hyperlink{server_8h_a9c8780378078e51e7c9041cbac392db9}{Player} p, int game\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Insere um jogador em uma partida. \end{DoxyCompactList}\item 
+void \hyperlink{client__thread_8h_ac75eae4133f6e5bde445e1380ee07d58}{wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect} (int game\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Espera até que todos os jogadores se conectem em uma partida. \end{DoxyCompactList}\item 
+void \hyperlink{client__thread_8h_a8adfa2e21b4f3b6c6ed0eed53b7b6c8c}{write\+\_\+in\+\_\+file\+\_\+ranking} (char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Cria um arquivo com o nome dos vencedores. \end{DoxyCompactList}\item 
+void \hyperlink{client__thread_8h_a42a0849dd88c8efd0747a304aa5ecea5}{leave\+\_\+game} (int game\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Abandona uma partida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo contendo cabeçalhos de funções que implementam as interações do servidor com os clientes conectados. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020
+\end{DoxyDate}
+Esse arquivo contém as definições das funções que são implementadas em \hyperlink{client__thread_8c}{client\+\_\+thread.\+c}. Essas funções tem como objetivo implementar o funcionamento da troca de mensagens entre servidor e clientes quando estes já estão conectados. 
+
+\subsection{Funções}
+\mbox{\Hypertarget{client__thread_8h_a86e63437485b25c41bbb1f60486084e9}\label{client__thread_8h_a86e63437485b25c41bbb1f60486084e9}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!client\+\_\+connection\+\_\+thread@{client\+\_\+connection\+\_\+thread}}
+\index{client\+\_\+connection\+\_\+thread@{client\+\_\+connection\+\_\+thread}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{client\+\_\+connection\+\_\+thread()}{client\_connection\_thread()}}
+{\footnotesize\ttfamily void$\ast$ client\+\_\+connection\+\_\+thread (\begin{DoxyParamCaption}\item[{void $\ast$}]{client\+\_\+address }\end{DoxyParamCaption})}
+
+
+
+Thread de conexão dedicada a um cliente. 
+
+Essa função é chamada em forma de thread sempre que um usuário realiza login no servidor, recebendo o endereço {\ttfamily client\+\_\+address} do client como parâmetro. Essa função faz as seguintes ações\+:
+\begin{DoxyItemize}
+\item Realizar a abertura de um socket dedicado para o cliente, e envia o endereço do socket para o cliente.
+\item Receber e armazenar o nome do cliente conectado.
+\item Chamar a função {\ttfamily search\+\_\+for\+\_\+available\+\_\+game} para encontrar uma partida para esse jogador.
+\item Chamar a função {\ttfamily insert\+\_\+player\+\_\+in\+\_\+game} para inserir esse jogador na partida encontrada.
+\item Caso o jogador for o primeiro a se conectar a partida, espera até que o segundo se conecte chamando a função {\ttfamily wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect}.
+\item Caso o jogador for o segundo a se conectar na partida, realiza o sorteio de quem é o primeiro a jogar.
+\item Avisa os jogadores se são os primeiros ou segundos a jogar.
+\item Inicia a partida dos jogadores com a função {\ttfamily start\+\_\+remote\+\_\+tictactoe\+\_\+game}.
+\item Fecha os socket abertos, ao fim da partida.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em client\+\_\+address} & Ponteiro para o endereço do cliente conectado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{client__thread_8h_aa54065880f42cda8bec65d90455adda0}\label{client__thread_8h_aa54065880f42cda8bec65d90455adda0}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!init\+\_\+shared\+\_\+variables@{init\+\_\+shared\+\_\+variables}}
+\index{init\+\_\+shared\+\_\+variables@{init\+\_\+shared\+\_\+variables}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{init\+\_\+shared\+\_\+variables()}{init\_shared\_variables()}}
+{\footnotesize\ttfamily int init\+\_\+shared\+\_\+variables (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa as variáveis compartilhadas. 
+
+Essa função inicializa as variáveis que são compartilhadas entre as threads de conexão com os clientes. Inicializa os seguintes recursos\+:
+\begin{DoxyItemize}
+\item pthread\+\_\+mutex\+\_\+t lock
+\item Game tictactoe\mbox{[}N\+R\+O\+\_\+\+P\+A\+R\+T\+I\+D\+A\+S\+\_\+\+S\+I\+M\+U\+L\+T\+A\+N\+E\+AS\mbox{]}
+\end{DoxyItemize}
+
+{\ttfamily lock} é o mutex utilizado para controlar o acesso à variável {\ttfamily tictactoe} , realizando a exclusão mútua de acesso à mesma. Fazendo com que não mais que uma thread possa adentrar uma região de código trancada por essa variável.
+
+{\ttfamily tictactoe} é um array que contém todos os jogos do servidor, e é utilizado pelas várias threads de clientes para ler as informações da partida, entrar em partidas, etc.
+
+\begin{DoxyReturn}{Retorna}
+resultado da inicialização\+: 0 em caso de sucesso e 1 em caso de erro. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{client__thread_8h_a28fe4040784cc676e1d0a757cdb02628}\label{client__thread_8h_a28fe4040784cc676e1d0a757cdb02628}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!insert\+\_\+player\+\_\+in\+\_\+game@{insert\+\_\+player\+\_\+in\+\_\+game}}
+\index{insert\+\_\+player\+\_\+in\+\_\+game@{insert\+\_\+player\+\_\+in\+\_\+game}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{insert\+\_\+player\+\_\+in\+\_\+game()}{insert\_player\_in\_game()}}
+{\footnotesize\ttfamily int insert\+\_\+player\+\_\+in\+\_\+game (\begin{DoxyParamCaption}\item[{\hyperlink{server_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}]{p,  }\item[{int}]{game\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Insere um jogador em uma partida. 
+
+Insere o jogador {\ttfamily p} dentro da partida {\ttfamily game\+\_\+id}, na primeira ou segunda posição.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em p} & Jogador que será inserido. \\
+\hline
+{\em game\+\_\+id} & Partida que terá um jogador inserido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} id do jogador dentro dessa partida, sendo 0 ou 1
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\hyperlink{structplayer}{Player} p;
+\textcolor{keywordtype}{int} game\_id;
+
+game\_id = \hyperlink{client__thread_8h_a0c2a40bfec08e5623244ec2377b5cfff}{search\_for\_available\_game}();
+\textcolor{keywordflow}{if} (game\_id == -1)
+\{
+    printf(\textcolor{stringliteral}{"Não há partidas com vagas.\(\backslash\)n"});
+\}
+\textcolor{keywordflow}{else}
+\{
+    p.\hyperlink{structplayer_a0e6fb0e744015cdf9f4dd12164a1dbaa}{id} = \hyperlink{client__thread_8h_a28fe4040784cc676e1d0a757cdb02628}{insert\_player\_in\_game}(p, game\_id);
+\}
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+É recomendável que essa função seja chamada dentro do bloqueio do mutex. Para impedir que mais de 2 jogadores tentem entrar na mesma partida ao mesmo tempo e quebre o limite de jogadores por partida. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{client__thread_8h_a42a0849dd88c8efd0747a304aa5ecea5}\label{client__thread_8h_a42a0849dd88c8efd0747a304aa5ecea5}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!leave\+\_\+game@{leave\+\_\+game}}
+\index{leave\+\_\+game@{leave\+\_\+game}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{leave\+\_\+game()}{leave\_game()}}
+{\footnotesize\ttfamily void leave\+\_\+game (\begin{DoxyParamCaption}\item[{int}]{game\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Abandona uma partida. 
+
+Decrementa em um o número de jogadores de uma partida;
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+\_\+id} & id da partida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{client__thread_8h_a0c2a40bfec08e5623244ec2377b5cfff}\label{client__thread_8h_a0c2a40bfec08e5623244ec2377b5cfff}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!search\+\_\+for\+\_\+available\+\_\+game@{search\+\_\+for\+\_\+available\+\_\+game}}
+\index{search\+\_\+for\+\_\+available\+\_\+game@{search\+\_\+for\+\_\+available\+\_\+game}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{search\+\_\+for\+\_\+available\+\_\+game()}{search\_for\_available\_game()}}
+{\footnotesize\ttfamily int search\+\_\+for\+\_\+available\+\_\+game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Procura por um jogo com vagas abertas. 
+
+Faz a busca por uma partida com vagas abertas no servidor, o procedimento de busca é o seguinte\+:
+\begin{DoxyItemize}
+\item Se houver uma partida com um player esperando um oponente, dá preferência a essa partida.
+\item Se não houver partida com um player esperando, procura pela primeira partida com duas vagas abertas.
+\item Se todas as partidas estiverem cheias, retorna {\bfseries -\/1} , indicando que não há vagas.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Retorna}
+Id da partida encontrada.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\hyperlink{structplayer}{Player} p;
+\textcolor{keywordtype}{int} game\_id;
+
+game\_id = \hyperlink{client__thread_8h_a0c2a40bfec08e5623244ec2377b5cfff}{search\_for\_available\_game}();
+\textcolor{keywordflow}{if} (game\_id == -1)
+\{
+    printf(\textcolor{stringliteral}{"Não há partidas com vagas.\(\backslash\)n"});
+\}
+\textcolor{keywordflow}{else}
+\{
+    p.\hyperlink{structplayer_a0e6fb0e744015cdf9f4dd12164a1dbaa}{id} = \hyperlink{client__thread_8h_a28fe4040784cc676e1d0a757cdb02628}{insert\_player\_in\_game}(p, game\_id);
+\}
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+É recomendável que essa partida seja chamada dentro do bloqueio do mutex, para evitar que as informações das partidas sejam alteradas durante a busca. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{client__thread_8h_ac6bc41cb445fb65d6e0f6d5740789cb4}\label{client__thread_8h_ac6bc41cb445fb65d6e0f6d5740789cb4}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!start\+\_\+remote\+\_\+tictactoe\+\_\+game@{start\+\_\+remote\+\_\+tictactoe\+\_\+game}}
+\index{start\+\_\+remote\+\_\+tictactoe\+\_\+game@{start\+\_\+remote\+\_\+tictactoe\+\_\+game}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{start\+\_\+remote\+\_\+tictactoe\+\_\+game()}{start\_remote\_tictactoe\_game()}}
+{\footnotesize\ttfamily void start\+\_\+remote\+\_\+tictactoe\+\_\+game (\begin{DoxyParamCaption}\item[{int}]{socket,  }\item[{\hyperlink{server_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}]{p,  }\item[{unsigned short}]{game\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Inicia uma partida de tic-\/tac-\/toe com o jogador indicado. 
+
+Essa função implementa a troca de mensagens de um jogador com a partida, e deve ser chamada pelos dois jogadores. Um é o jogador que foi sorteado para começar, o outro para ser o segundo a jogar. A razão para isso é que a conexão dos dois clientes é tratada independentemente em duas threads, e a função é chamada quase que simultaneamente pelas duas threads ao fim da função {\ttfamily wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect}.
+
+Quando a partida acaba, é chamada a função {\ttfamily leave\+\_\+game}.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em socket} & Socket que o servidor esperará por mensagens desse jogador e enviará jogadas a seu oponente. \\
+\hline
+{\em p} & Jogador que participará da partida. \\
+\hline
+{\em game\+\_\+id} & id da partida que está iniciando. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{client__thread_8h_ac75eae4133f6e5bde445e1380ee07d58}\label{client__thread_8h_ac75eae4133f6e5bde445e1380ee07d58}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect@{wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect}}
+\index{wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect@{wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect()}{wait\_all\_players\_to\_connect()}}
+{\footnotesize\ttfamily void wait\+\_\+all\+\_\+players\+\_\+to\+\_\+connect (\begin{DoxyParamCaption}\item[{int}]{game\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Espera até que todos os jogadores se conectem em uma partida. 
+
+{\bfseries Bloqueia} a execução do programa até que a partida de id {\ttfamily game\+\_\+id} esteja cheia.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+\_\+id} & id da partida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Aviso}
+Se essa função for chamada dentro do bloqueio do mutex, ela nunca será finalizada. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{client__thread_8h_a8adfa2e21b4f3b6c6ed0eed53b7b6c8c}\label{client__thread_8h_a8adfa2e21b4f3b6c6ed0eed53b7b6c8c}} 
+\index{client\+\_\+thread.\+h@{client\+\_\+thread.\+h}!write\+\_\+in\+\_\+file\+\_\+ranking@{write\+\_\+in\+\_\+file\+\_\+ranking}}
+\index{write\+\_\+in\+\_\+file\+\_\+ranking@{write\+\_\+in\+\_\+file\+\_\+ranking}!client\+\_\+thread.\+h@{client\+\_\+thread.\+h}}
+\subsubsection{\texorpdfstring{write\+\_\+in\+\_\+file\+\_\+ranking()}{write\_in\_file\_ranking()}}
+{\footnotesize\ttfamily void write\+\_\+in\+\_\+file\+\_\+ranking (\begin{DoxyParamCaption}\item[{char $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Cria um arquivo com o nome dos vencedores. 
+
+Cria um novo arquivo ou abre um ja existente e escreve o nome do vencedor da partida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em msg} & nome do jogador vencedor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno. 
+\end{DoxyReturn}

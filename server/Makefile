@@ -7,8 +7,8 @@ OBJ_DIR := obj
 SRC := $(wildcard $(SRC_DIR)/*.c)
 OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-CPPFLAGS := -Iinclude -pthread
-CFLAGS   := -Wall -O2 -pthread
+CPPFLAGS := -Iinclude
+CFLAGS   := -Wall -O3 -pthread
 LDFLAGS := -pthread
 
 .PHONY: all clean

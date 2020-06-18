@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UDP Tic-Tac-Toe: Código-Fonte de client/include/board.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UDP Tic-Tac-Toe
+   </div>
+   <div id="projectbrief">Jogo da velha local ou remoto</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_db3a54907829b36871118d03417739cd.html">client</a></li><li class="navelem"><a class="el" href="dir_5c23080e296bbe846f4ed2d01d7b595d.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">board.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="board_8h.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="board_8h.html#a59e294ac28318369e0f8c7e50c6ae488">DrawBoard</a>(<span class="keywordtype">char</span> gameBoard[9]);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="board_8h.html#abb7dab68efbd40aaffe686a1b65eb6ce">DrawBoardWithNames</a>(<span class="keywordtype">char</span> gameBoard[9], <span class="keywordtype">char</span> *player1Name, <span class="keywordtype">char</span> *player2Name, <span class="keywordtype">char</span> *playerCharacter);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">int</span> <a class="code" href="board_8h.html#a8faf24edc7214b49027b34cdae00293d">CheckPlayerWin</a>(<span class="keywordtype">char</span> gameBoard[9]);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">int</span> <a class="code" href="board_8h.html#a04497f61d533bce8e10181d659317f65">checkValidPlay</a>(<span class="keywordtype">char</span> *gameBoard, <span class="keywordtype">int</span> position);</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="board_8h.html#abc40cd622f423abf44084c8f8595f57f">clear_screen</a>( <span class="keywordtype">void</span> );</div><div class="ttc" id="board_8h_html_abc40cd622f423abf44084c8f8595f57f"><div class="ttname"><a href="board_8h.html#abc40cd622f423abf44084c8f8595f57f">clear_screen</a></div><div class="ttdeci">void clear_screen(void)</div><div class="ttdoc">Limpa a tela. </div><div class="ttdef"><b>Definition:</b> board.c:3</div></div>
+<div class="ttc" id="board_8h_html_a04497f61d533bce8e10181d659317f65"><div class="ttname"><a href="board_8h.html#a04497f61d533bce8e10181d659317f65">checkValidPlay</a></div><div class="ttdeci">int checkValidPlay(char *gameBoard, int position)</div><div class="ttdoc">Verifica a jogada. </div><div class="ttdef"><b>Definition:</b> board.c:41</div></div>
+<div class="ttc" id="board_8h_html_abb7dab68efbd40aaffe686a1b65eb6ce"><div class="ttname"><a href="board_8h.html#abb7dab68efbd40aaffe686a1b65eb6ce">DrawBoardWithNames</a></div><div class="ttdeci">void DrawBoardWithNames(char gameBoard[9], char *player1Name, char *player2Name, char *playerCharacter)</div><div class="ttdoc">Constroi o tabuleiro do jogo. </div><div class="ttdef"><b>Definition:</b> board.c:21</div></div>
+<div class="ttc" id="board_8h_html_a59e294ac28318369e0f8c7e50c6ae488"><div class="ttname"><a href="board_8h.html#a59e294ac28318369e0f8c7e50c6ae488">DrawBoard</a></div><div class="ttdeci">void DrawBoard(char gameBoard[9])</div><div class="ttdoc">Constroi o tabuleiro do jogo. </div><div class="ttdef"><b>Definition:</b> board.c:9</div></div>
+<div class="ttc" id="board_8h_html_a8faf24edc7214b49027b34cdae00293d"><div class="ttname"><a href="board_8h.html#a8faf24edc7214b49027b34cdae00293d">CheckPlayerWin</a></div><div class="ttdeci">int CheckPlayerWin(char gameBoard[9])</div><div class="ttdoc">Constroi o tabuleiro do jogo. </div><div class="ttdef"><b>Definition:</b> board.c:47</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

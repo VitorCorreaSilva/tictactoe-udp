@@ -1,0 +1,101 @@
+\hypertarget{player_8h}{}\section{Referência do Arquivo client/include/player.h}
+\label{player_8h}\index{client/include/player.\+h@{client/include/player.\+h}}
+
+
+Arquivo contendo cabeçalhos de funções que implementam as funções do player.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Gráfico de dependência de inclusões para player.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{player_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{player_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{player_8h_a7ee9285c4f799709a278367aa89c3ddd}{Change\+Player} (char $\ast$player\+Character)
+\begin{DoxyCompactList}\small\item\em Muda o caractere do jogador atual. \end{DoxyCompactList}\item 
+int \hyperlink{player_8h_ac6ec12daed56156840312167f3b666ec}{Get\+Number\+Of\+Players} ()
+\begin{DoxyCompactList}\small\item\em Retorna o numero de jogadores. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{player_8h_a44cb69b8503cd66d7847cc15965d7308}{Get\+Player\+Name} (int player\+Number)
+\begin{DoxyCompactList}\small\item\em Define o nome do jogador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo contendo cabeçalhos de funções que implementam as funções do player. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020
+\end{DoxyDate}
+Esse arquivo contém as definições das funções que são implementadas em player.\+c. Essas funções tem como objetivo implementar as operações de escolha de caracter para os jogadores, escolha do numero de jogadores e define o nome do jogador. 
+
+\subsection{Funções}
+\mbox{\Hypertarget{player_8h_a7ee9285c4f799709a278367aa89c3ddd}\label{player_8h_a7ee9285c4f799709a278367aa89c3ddd}} 
+\index{player.\+h@{player.\+h}!Change\+Player@{Change\+Player}}
+\index{Change\+Player@{Change\+Player}!player.\+h@{player.\+h}}
+\subsubsection{\texorpdfstring{Change\+Player()}{ChangePlayer()}}
+{\footnotesize\ttfamily void Change\+Player (\begin{DoxyParamCaption}\item[{char $\ast$}]{player\+Character }\end{DoxyParamCaption})}
+
+
+
+Muda o caractere do jogador atual. 
+
+Decide o caractere a ser usado pelo jogador.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+Character} & Ponteiro que guarda a informação de caractere do jogador. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{player_8h_ac6ec12daed56156840312167f3b666ec}\label{player_8h_ac6ec12daed56156840312167f3b666ec}} 
+\index{player.\+h@{player.\+h}!Get\+Number\+Of\+Players@{Get\+Number\+Of\+Players}}
+\index{Get\+Number\+Of\+Players@{Get\+Number\+Of\+Players}!player.\+h@{player.\+h}}
+\subsubsection{\texorpdfstring{Get\+Number\+Of\+Players()}{GetNumberOfPlayers()}}
+{\footnotesize\ttfamily int Get\+Number\+Of\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retorna o numero de jogadores. 
+
+Implementa a escolha do numero de jogadores 1 ou 2.
+
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} contendo o numero de jogadores da partida. Retorna {\bfseries 1} ou {\bfseries 2} jogadores. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{player_8h_a44cb69b8503cd66d7847cc15965d7308}\label{player_8h_a44cb69b8503cd66d7847cc15965d7308}} 
+\index{player.\+h@{player.\+h}!Get\+Player\+Name@{Get\+Player\+Name}}
+\index{Get\+Player\+Name@{Get\+Player\+Name}!player.\+h@{player.\+h}}
+\subsubsection{\texorpdfstring{Get\+Player\+Name()}{GetPlayerName()}}
+{\footnotesize\ttfamily char$\ast$ Get\+Player\+Name (\begin{DoxyParamCaption}\item[{int}]{player\+Number }\end{DoxyParamCaption})}
+
+
+
+Define o nome do jogador. 
+
+Define o nome do jogador que é retornornado como ponteiro {\ttfamily $\ast$char} 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+Number} & Contem o numero do jogador que deve alterar o nome. {\bfseries 0} para computador {\bfseries 1} ou {\bfseries 2} para os jogadores. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily $\ast$char} contendo o nome do jogador. 
+\end{DoxyReturn}

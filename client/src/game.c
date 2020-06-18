@@ -99,8 +99,8 @@ void PlayerStart(char *playerCharacter, int *playerTurn, int numberOfPlayers, ch
 	
 	//Valor aleat�rio que define quem inicia o a partida
   	int playerStart = (rand() % 2) + 1;
-  	if(system("clear") == 0){}
-  	
+	clear_screen();
+
   	//Altera o caractere para o do jogador que inicia a partida caso necess�rio
   	if(playerStart == 2)
   	{

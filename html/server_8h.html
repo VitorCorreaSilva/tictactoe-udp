@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UDP Tic-Tac-Toe: Referência do Arquivo server/include/server.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UDP Tic-Tac-Toe
+   </div>
+   <div id="projectbrief">Jogo da velha local ou remoto</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_41e1742e44e2de38b3bc91f993fed282.html">server</a></li><li class="navelem"><a class="el" href="dir_2b32f7736d6a65027d17676f6279053c.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estruturas de Dados</a> &#124;
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#typedef-members">Definições de Tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo server.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo contendo as estruturas e cabeçalhos de funções do servidor.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;netinet/in.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para server.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="server_8h__incl.png" border="0" usemap="#server_2include_2server_8h" alt=""/></div>
+<map name="server_2include_2server_8h" id="server_2include_2server_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo:</div>
+<div class="dyncontent">
+<div class="center"><img src="server_8h__dep__incl.png" border="0" usemap="#server_2include_2server_8hdep" alt=""/></div>
+<map name="server_2include_2server_8hdep" id="server_2include_2server_8hdep">
+<area shape="rect" id="node2" href="client__thread_8c.html" title="Implementação das funções de conexão via thread dedicada. " alt="" coords="5,80,175,107"/>
+<area shape="rect" id="node3" href="server_8c.html" title="Implementação das funções do servidor. " alt="" coords="199,80,330,107"/>
+</map>
+</div>
+</div>
+<p><a href="server_8h_source.html">Vá para o código-fonte deste arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Estruturas de Dados</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structreceived__message.html">received_message</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplayer.html">player</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame.html">game</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a4af527b772cacbae6d6a0e48c3dcf53f"><td class="memItemLeft" align="right" valign="top"><a id="a4af527b772cacbae6d6a0e48c3dcf53f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TAM_MSG</b>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a4af527b772cacbae6d6a0e48c3dcf53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cb24e830bc294c5ec50624f5b6263e"><td class="memItemLeft" align="right" valign="top"><a id="a06cb24e830bc294c5ec50624f5b6263e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NRO_PARTIDAS_SIMULTANEAS</b>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:a06cb24e830bc294c5ec50624f5b6263e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Definições de Tipos</h2></td></tr>
+<tr class="memitem:a2645d40a71683d956e55bcf7a6823530"><td class="memItemLeft" align="right" valign="top">typedef struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a></td></tr>
+<tr class="memdesc:a2645d40a71683d956e55bcf7a6823530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Endereço Remoto.  <a href="#a2645d40a71683d956e55bcf7a6823530">Mais...</a><br /></td></tr>
+<tr class="separator:a2645d40a71683d956e55bcf7a6823530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f9916b5a27f1dfc760d6a01e0f4bd4"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structreceived__message.html">received_message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a23f9916b5a27f1dfc760d6a01e0f4bd4">ReceivedMessage</a></td></tr>
+<tr class="memdesc:a23f9916b5a27f1dfc760d6a01e0f4bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mensagem recebida.  <a href="#a23f9916b5a27f1dfc760d6a01e0f4bd4">Mais...</a><br /></td></tr>
+<tr class="separator:a23f9916b5a27f1dfc760d6a01e0f4bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c8780378078e51e7c9041cbac392db9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structplayer.html">player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a></td></tr>
+<tr class="memdesc:a9c8780378078e51e7c9041cbac392db9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jogador conectado.  <a href="#a9c8780378078e51e7c9041cbac392db9">Mais...</a><br /></td></tr>
+<tr class="separator:a9c8780378078e51e7c9041cbac392db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec25c3351f43b6c631aedeb9e14d46a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structgame.html">game</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a4ec25c3351f43b6c631aedeb9e14d46a">Game</a></td></tr>
+<tr class="memdesc:a4ec25c3351f43b6c631aedeb9e14d46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partida de tic-tac-toe.  <a href="#a4ec25c3351f43b6c631aedeb9e14d46a">Mais...</a><br /></td></tr>
+<tr class="separator:a4ec25c3351f43b6c631aedeb9e14d46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a7e53f8b1219135aed66d02cb58357748"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748">create_socket</a> (int port)</td></tr>
+<tr class="memdesc:a7e53f8b1219135aed66d02cb58357748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um socket udp.  <a href="#a7e53f8b1219135aed66d02cb58357748">Mais...</a><br /></td></tr>
+<tr class="separator:a7e53f8b1219135aed66d02cb58357748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a547b23638fcaac00857870c985aa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="server_8h.html#a23f9916b5a27f1dfc760d6a01e0f4bd4">ReceivedMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a13a547b23638fcaac00857870c985aa7">receive_message</a> (int sockfd)</td></tr>
+<tr class="memdesc:a13a547b23638fcaac00857870c985aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Espera pela chegada de uma mensagem em um socket.  <a href="#a13a547b23638fcaac00857870c985aa7">Mais...</a><br /></td></tr>
+<tr class="separator:a13a547b23638fcaac00857870c985aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ab0d52a5f583e6f915a9dba47c951dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a1ab0d52a5f583e6f915a9dba47c951dd">rand_range</a> (int min, int max)</td></tr>
+<tr class="memdesc:a1ab0d52a5f583e6f915a9dba47c951dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gerador de número aleatório dentro de um intervalo.  <a href="#a1ab0d52a5f583e6f915a9dba47c951dd">Mais...</a><br /></td></tr>
+<tr class="separator:a1ab0d52a5f583e6f915a9dba47c951dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53a5f77518d295f38d03401c8f5e941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#af53a5f77518d295f38d03401c8f5e941">send_message</a> (int socket, char *msg, <a class="el" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a> client_addr)</td></tr>
+<tr class="memdesc:af53a5f77518d295f38d03401c8f5e941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia uma mensagem para um endereço via socket udp.  <a href="#af53a5f77518d295f38d03401c8f5e941">Mais...</a><br /></td></tr>
+<tr class="separator:af53a5f77518d295f38d03401c8f5e941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a384b9bb4702634b169c470efe0c867cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a384b9bb4702634b169c470efe0c867cb">wait_for_login</a> (int socket)</td></tr>
+<tr class="memdesc:a384b9bb4702634b169c470efe0c867cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a espera por logins no servidor.  <a href="#a384b9bb4702634b169c470efe0c867cb">Mais...</a><br /></td></tr>
+<tr class="separator:a384b9bb4702634b169c470efe0c867cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb0e3e1429bfea5bd877ee3ee42c92c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="server_8h.html#a0bb0e3e1429bfea5bd877ee3ee42c92c">init_server</a> (void)</td></tr>
+<tr class="memdesc:a0bb0e3e1429bfea5bd877ee3ee42c92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza a inicialização do servidor.  <a href="#a0bb0e3e1429bfea5bd877ee3ee42c92c">Mais...</a><br /></td></tr>
+<tr class="separator:a0bb0e3e1429bfea5bd877ee3ee42c92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
+<div class="textblock"><p>Arquivo contendo as estruturas e cabeçalhos de funções do servidor. </p>
+<dl class="section author"><dt>Autor</dt><dd>Vitor Correa da Silva </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>29 May 2020</dd></dl>
+<p>Esse arquivo contém as definições das funções que são implementadas em <a class="el" href="server_8c.html" title="Implementação das funções do servidor. ">server.c</a>. Essas funções tem como objetivo implementar um servidor udp que possibilita o login e gerenciamento de múltiplos jogadores para a realização de partidas de tic-tac-toe (jogo da velha) de forma remota. </p>
+</div><h2 class="groupheader">Definições dos tipos</h2>
+<a id="a4ec25c3351f43b6c631aedeb9e14d46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec25c3351f43b6c631aedeb9e14d46a">&#9670;&nbsp;</a></span>Game</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="server_8h.html#a4ec25c3351f43b6c631aedeb9e14d46a">Game</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Partida de tic-tac-toe. </p>
+<p>Estrutura que armazena as informações de uma partida de tic-tac-toe que esteja acontecendo no servidor. </p>
+
+</div>
+</div>
+<a id="a9c8780378078e51e7c9041cbac392db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c8780378078e51e7c9041cbac392db9">&#9670;&nbsp;</a></span>Player</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="server_8h.html#a9c8780378078e51e7c9041cbac392db9">Player</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Jogador conectado. </p>
+<p>Estrutura que armazena as informações de um jogador conectado ao servidor. </p>
+
+</div>
+</div>
+<a id="a23f9916b5a27f1dfc760d6a01e0f4bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f9916b5a27f1dfc760d6a01e0f4bd4">&#9670;&nbsp;</a></span>ReceivedMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="server_8h.html#a23f9916b5a27f1dfc760d6a01e0f4bd4">ReceivedMessage</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mensagem recebida. </p>
+<p>ReceivedMessage guarda o conteúdo e informações referentes a uma mensagem recebida via socket UDP. </p>
+
+</div>
+</div>
+<a id="a2645d40a71683d956e55bcf7a6823530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2645d40a71683d956e55bcf7a6823530">&#9670;&nbsp;</a></span>Sockaddr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Endereço Remoto. </p>
+<p>É utilizado como alias à estrutura sockaddr_in da biblioteca netinet/in.h. Essa estrutura guarda as informações de endereço remoto de outros sockets. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="a7e53f8b1219135aed66d02cb58357748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e53f8b1219135aed66d02cb58357748">&#9670;&nbsp;</a></span>create_socket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int create_socket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um socket udp. </p>
+<p>Faz a criação de um socket do tipo UDP e o associa a porta indicada no argumento <code>port</code> .</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Número da porta UDP que será associada a esse socket, deve ser um valor entre 1 e 65536. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int</code> contendo o id do descritor desse socket. Retorna <b>-1</b> em caso de erro.</dd></dl>
+<p><b>Exemplo de uso:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> socket;</div><div class="line">socket = <a class="code" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748">create_socket</a>(80);</div><div class="line"><span class="keywordflow">if</span> (socket != -1) {</div><div class="line">   printf(<span class="stringliteral">&quot;socket aberto com sucesso.\n&quot;</span>);</div><div class="line">}</div></div><!-- fragment --> 
+</div>
+</div>
+<a id="a0bb0e3e1429bfea5bd877ee3ee42c92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb0e3e1429bfea5bd877ee3ee42c92c">&#9670;&nbsp;</a></span>init_server()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int init_server </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza a inicialização do servidor. </p>
+<p>Essa função é destinada a guardar todas as instruções que devem ser executadas no inicio do programa. Atualmente, ela inicializa o sistema de geração de números aleatórios, para que cada execução do servidor disponha de valores aleatórios diferentes.</p>
+<dl class="section return"><dt>Retorna</dt><dd>Não há retorno. </dd></dl>
+
+</div>
+</div>
+<a id="a1ab0d52a5f583e6f915a9dba47c951dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ab0d52a5f583e6f915a9dba47c951dd">&#9670;&nbsp;</a></span>rand_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rand_range </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gerador de número aleatório dentro de um intervalo. </p>
+<p>Gera um número aleatório dentro do intervalo [ <code>min</code> , <code>max</code> ]</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>Valor mínimo do intervalo </td></tr>
+    <tr><td class="paramname">max</td><td>Valor máximo do intervalo </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd><code>int</code> Valor aleatório gerado.</dd></dl>
+<p><b>Exemplo de uso:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> nro_aleatorio;</div><div class="line"></div><div class="line">nro_aleatorio = <a class="code" href="server_8h.html#a1ab0d52a5f583e6f915a9dba47c951dd">rand_range</a>(1,100)</div><div class="line"></div><div class="line">printf(&quot;Valor aleatório entre 1 e 100: %d\n&quot;, nro_aleatorio);</div></div><!-- fragment --> 
+</div>
+</div>
+<a id="a13a547b23638fcaac00857870c985aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a547b23638fcaac00857870c985aa7">&#9670;&nbsp;</a></span>receive_message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="server_8h.html#a23f9916b5a27f1dfc760d6a01e0f4bd4">ReceivedMessage</a> receive_message </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockfd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Espera pela chegada de uma mensagem em um socket. </p>
+<p>Essa função inicia a espera de uma mensagem e <b>bloqueia</b> o programa nesse estado. O programa só é desbloqueado com a chegada de uma mensagem.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sockfd</td><td>id do descritor do socket que aguardará por uma mensagem. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Estrutura <code>ReceivedMessage</code> contendo informações da mensagem que o socket recebeu.</dd></dl>
+<p><b>Exemplo de uso:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> socket;</div><div class="line"><a class="code" href="structreceived__message.html">ReceivedMessage</a> m;</div><div class="line"></div><div class="line">socket = <a class="code" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748">create_socket</a>(80);</div><div class="line"><span class="keywordflow">if</span> (socket == -1)</div><div class="line">{</div><div class="line">    exit();</div><div class="line">}</div><div class="line">m = <a class="code" href="server_8h.html#a13a547b23638fcaac00857870c985aa7">receive_message</a>(socket);</div><div class="line"></div><div class="line">printf(<span class="stringliteral">&quot;Mensagem recebida: %s\n&quot;</span>, m.<a class="code" href="structreceived__message.html#ada9c34d3c26df419fa3dd0ac2c20e860">data</a>);</div></div><!-- fragment --><dl class="section warning"><dt>Aviso</dt><dd>O socket enviado por parâmetro deve ter sido criado previamente através da função <a class="el" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748" title="Cria um socket udp. ">create_socket()</a> </dd></dl>
+
+</div>
+</div>
+<a id="af53a5f77518d295f38d03401c8f5e941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af53a5f77518d295f38d03401c8f5e941">&#9670;&nbsp;</a></span>send_message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void send_message </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>socket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="server_8h.html#a2645d40a71683d956e55bcf7a6823530">Sockaddr</a>&#160;</td>
+          <td class="paramname"><em>client_addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia uma mensagem para um endereço via socket udp. </p>
+<p>Função que realiza o envio de uma mensagem de texto via udp. Essa função, diferentemente de <code>receive_message</code> , é não bloqueante. O que significa que não há confirmação de envio, ela realiza o envio e segue a execução do programa. É utilizada para a comunicação com os clientes conectados.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>id do descritor do socket que realizará o envio da mensagem. </td></tr>
+    <tr><td class="paramname">msg</td><td>texto da mensagem a ser enviada. </td></tr>
+    <tr><td class="paramname">client_addr</td><td>Endereço do cliente que será enviada a mensagem. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Não há retorno.</dd></dl>
+<p><b>Exemplo de uso:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> socket;</div><div class="line"><span class="keywordtype">char</span> msg[1024];</div><div class="line"><a class="code" href="structreceived__message.html">ReceivedMessage</a> m;</div><div class="line"> </div><div class="line">socket = <a class="code" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748">create_socket</a>(80);</div><div class="line"><span class="keywordflow">if</span> (socket == -1)</div><div class="line">{</div><div class="line">    exit();</div><div class="line">}</div><div class="line"><span class="comment">// espera pelo contato de um cliente.</span></div><div class="line">m = <a class="code" href="server_8h.html#a13a547b23638fcaac00857870c985aa7">receive_message</a>(socket);</div><div class="line"></div><div class="line"><span class="comment">// envia &quot;HELLO&quot; de volta para o cliente.</span></div><div class="line">strcpy(msg, <span class="stringliteral">&quot;HELLO&quot;</span>);</div><div class="line"><a class="code" href="server_8h.html#af53a5f77518d295f38d03401c8f5e941">send_message</a>(socket, msg, m.addr);</div></div><!-- fragment --><dl class="section warning"><dt>Aviso</dt><dd>O socket enviado por parâmetro deve ter sido criado previamente através da função <a class="el" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748" title="Cria um socket udp. ">create_socket()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a384b9bb4702634b169c470efe0c867cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a384b9bb4702634b169c470efe0c867cb">&#9670;&nbsp;</a></span>wait_for_login()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wait_for_login </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>socket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza a espera por logins no servidor. </p>
+<p>Essa é a função principal do servidor, fazendo a espera por novas conexões e realizando a alocação de recursos para lidar com os diversos clientes conectados.</p>
+<p>Quando um cliente se conecta no servidor, enviando um "LOGIN" para o mesmo, o servidor responde criando uma thread para tratamento dedicado desse cliente, essa lógica está implementada nessa função.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>Socket que receberá o login de clientes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>Não há retorno.</dd></dl>
+<p><b>Exemplo de uso:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> socket;</div><div class="line"> </div><div class="line">socket = <a class="code" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748">create_socket</a>(80);</div><div class="line"><span class="keywordflow">if</span> (socket == -1)</div><div class="line">{</div><div class="line">    exit();</div><div class="line">}</div><div class="line"></div><div class="line"><a class="code" href="server_8h.html#a384b9bb4702634b169c470efe0c867cb">wait_for_login</a>(socket);</div></div><!-- fragment --><dl class="section warning"><dt>Aviso</dt><dd>O socket enviado por parâmetro deve ter sido criado previamente através da função <a class="el" href="server_8h.html#a7e53f8b1219135aed66d02cb58357748" title="Cria um socket udp. ">create_socket()</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

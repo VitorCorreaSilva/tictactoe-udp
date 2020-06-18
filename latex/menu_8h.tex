@@ -1,0 +1,76 @@
+\hypertarget{menu_8h}{}\section{Referência do Arquivo client/include/menu.h}
+\label{menu_8h}\index{client/include/menu.\+h@{client/include/menu.\+h}}
+
+
+Arquivo contendo as estruturas e cabeçalhos de funções do menu.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Gráfico de dependência de inclusões para menu.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{menu_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{menu_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{menu_8h_a320076d5ec51536af9676b6ae5d38e7b}{Show\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Mostra o menu. \end{DoxyCompactList}\item 
+void \hyperlink{menu_8h_ac7e4de9786226cbd71e4f86de310a3d7}{Menu\+Choice} (int choice, int $\ast$number\+Of\+Players)
+\begin{DoxyCompactList}\small\item\em Chama a função escolhida pelo jogador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo contendo as estruturas e cabeçalhos de funções do menu. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020
+\end{DoxyDate}
+Esse arquivo contém as definições das funções que são implementadas em menu.\+c. Essas funções tem como objetivo implementar um menu interativo. 
+
+\subsection{Funções}
+\mbox{\Hypertarget{menu_8h_ac7e4de9786226cbd71e4f86de310a3d7}\label{menu_8h_ac7e4de9786226cbd71e4f86de310a3d7}} 
+\index{menu.\+h@{menu.\+h}!Menu\+Choice@{Menu\+Choice}}
+\index{Menu\+Choice@{Menu\+Choice}!menu.\+h@{menu.\+h}}
+\subsubsection{\texorpdfstring{Menu\+Choice()}{MenuChoice()}}
+{\footnotesize\ttfamily void Menu\+Choice (\begin{DoxyParamCaption}\item[{int}]{choice,  }\item[{int $\ast$}]{number\+Of\+Players }\end{DoxyParamCaption})}
+
+
+
+Chama a função escolhida pelo jogador. 
+
+Espera um {\bfseries int} para definir a escolha do jogador e depois faz a chamada da função escolhida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em choice} & Escolha do jogador \\
+\hline
+{\em number\+Of\+Players} & Numero de jogadores \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{menu_8h_a320076d5ec51536af9676b6ae5d38e7b}\label{menu_8h_a320076d5ec51536af9676b6ae5d38e7b}} 
+\index{menu.\+h@{menu.\+h}!Show\+Menu@{Show\+Menu}}
+\index{Show\+Menu@{Show\+Menu}!menu.\+h@{menu.\+h}}
+\subsubsection{\texorpdfstring{Show\+Menu()}{ShowMenu()}}
+{\footnotesize\ttfamily void Show\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mostra o menu. 
+
+Implemtação do texto que é mostrado no menu 

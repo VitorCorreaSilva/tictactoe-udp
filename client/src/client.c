@@ -174,6 +174,7 @@ int play_tictactoe(int socket, char *host, int port)
 			printf("\n%s ganhou\n", playerTwoName);
 			printf("desconectando...\n");
 			disconnect(socket,host,port);
+			envia_mensagem(socket, playerTwoName, host, port);
 			sleep(5);
 
 			return 0;
@@ -184,6 +185,7 @@ int play_tictactoe(int socket, char *host, int port)
 			printf("Voce e \n%s empataram\n", playerTwoName);
 			printf("desconectando...\n");
 			disconnect(socket,host,port);
+			envia_mensagem(socket, "Empate", host, port);
 			sleep(5);
 			
 			return 0;

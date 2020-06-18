@@ -1,0 +1,328 @@
+\hypertarget{server_8h}{}\section{Referência do Arquivo server/include/server.h}
+\label{server_8h}\index{server/include/server.\+h@{server/include/server.\+h}}
+
+
+Arquivo contendo as estruturas e cabeçalhos de funções do servidor.  
+
+
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+Gráfico de dependência de inclusões para server.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server_8h__incl}
+\end{center}
+\end{figure}
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com este arquivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{server_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Estruturas de Dados}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structreceived__message}{received\+\_\+message}
+\item 
+struct \hyperlink{structplayer}{player}
+\item 
+struct \hyperlink{structgame}{game}
+\end{DoxyCompactItemize}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{server_8h_a4af527b772cacbae6d6a0e48c3dcf53f}\label{server_8h_a4af527b772cacbae6d6a0e48c3dcf53f}} 
+\#define {\bfseries T\+A\+M\+\_\+\+M\+SG}~1024
+\item 
+\mbox{\Hypertarget{server_8h_a06cb24e830bc294c5ec50624f5b6263e}\label{server_8h_a06cb24e830bc294c5ec50624f5b6263e}} 
+\#define {\bfseries N\+R\+O\+\_\+\+P\+A\+R\+T\+I\+D\+A\+S\+\_\+\+S\+I\+M\+U\+L\+T\+A\+N\+E\+AS}~1000
+\end{DoxyCompactItemize}
+\subsection*{Definições de Tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct sockaddr\+\_\+in \hyperlink{server_8h_a2645d40a71683d956e55bcf7a6823530}{Sockaddr}
+\begin{DoxyCompactList}\small\item\em Endereço Remoto. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structreceived__message}{received\+\_\+message} \hyperlink{server_8h_a23f9916b5a27f1dfc760d6a01e0f4bd4}{Received\+Message}
+\begin{DoxyCompactList}\small\item\em Mensagem recebida. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structplayer}{player} \hyperlink{server_8h_a9c8780378078e51e7c9041cbac392db9}{Player}
+\begin{DoxyCompactList}\small\item\em Jogador conectado. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structgame}{game} \hyperlink{server_8h_a4ec25c3351f43b6c631aedeb9e14d46a}{Game}
+\begin{DoxyCompactList}\small\item\em Partida de tic-\/tac-\/toe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\+\_\+socket} (int port)
+\begin{DoxyCompactList}\small\item\em Cria um socket udp. \end{DoxyCompactList}\item 
+\hyperlink{server_8h_a23f9916b5a27f1dfc760d6a01e0f4bd4}{Received\+Message} \hyperlink{server_8h_a13a547b23638fcaac00857870c985aa7}{receive\+\_\+message} (int sockfd)
+\begin{DoxyCompactList}\small\item\em Espera pela chegada de uma mensagem em um socket. \end{DoxyCompactList}\item 
+int \hyperlink{server_8h_a1ab0d52a5f583e6f915a9dba47c951dd}{rand\+\_\+range} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Gerador de número aleatório dentro de um intervalo. \end{DoxyCompactList}\item 
+void \hyperlink{server_8h_af53a5f77518d295f38d03401c8f5e941}{send\+\_\+message} (int socket, char $\ast$msg, \hyperlink{server_8h_a2645d40a71683d956e55bcf7a6823530}{Sockaddr} client\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Envia uma mensagem para um endereço via socket udp. \end{DoxyCompactList}\item 
+void \hyperlink{server_8h_a384b9bb4702634b169c470efe0c867cb}{wait\+\_\+for\+\_\+login} (int socket)
+\begin{DoxyCompactList}\small\item\em Realiza a espera por logins no servidor. \end{DoxyCompactList}\item 
+int \hyperlink{server_8h_a0bb0e3e1429bfea5bd877ee3ee42c92c}{init\+\_\+server} (void)
+\begin{DoxyCompactList}\small\item\em Realiza a inicialização do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo contendo as estruturas e cabeçalhos de funções do servidor. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020
+\end{DoxyDate}
+Esse arquivo contém as definições das funções que são implementadas em \hyperlink{server_8c}{server.\+c}. Essas funções tem como objetivo implementar um servidor udp que possibilita o login e gerenciamento de múltiplos jogadores para a realização de partidas de tic-\/tac-\/toe (jogo da velha) de forma remota. 
+
+\subsection{Definições dos tipos}
+\mbox{\Hypertarget{server_8h_a4ec25c3351f43b6c631aedeb9e14d46a}\label{server_8h_a4ec25c3351f43b6c631aedeb9e14d46a}} 
+\index{server.\+h@{server.\+h}!Game@{Game}}
+\index{Game@{Game}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{Game}{Game}}
+{\footnotesize\ttfamily \hyperlink{server_8h_a4ec25c3351f43b6c631aedeb9e14d46a}{Game}}
+
+
+
+Partida de tic-\/tac-\/toe. 
+
+Estrutura que armazena as informações de uma partida de tic-\/tac-\/toe que esteja acontecendo no servidor. \mbox{\Hypertarget{server_8h_a9c8780378078e51e7c9041cbac392db9}\label{server_8h_a9c8780378078e51e7c9041cbac392db9}} 
+\index{server.\+h@{server.\+h}!Player@{Player}}
+\index{Player@{Player}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \hyperlink{server_8h_a9c8780378078e51e7c9041cbac392db9}{Player}}
+
+
+
+Jogador conectado. 
+
+Estrutura que armazena as informações de um jogador conectado ao servidor. \mbox{\Hypertarget{server_8h_a23f9916b5a27f1dfc760d6a01e0f4bd4}\label{server_8h_a23f9916b5a27f1dfc760d6a01e0f4bd4}} 
+\index{server.\+h@{server.\+h}!Received\+Message@{Received\+Message}}
+\index{Received\+Message@{Received\+Message}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{Received\+Message}{ReceivedMessage}}
+{\footnotesize\ttfamily \hyperlink{server_8h_a23f9916b5a27f1dfc760d6a01e0f4bd4}{Received\+Message}}
+
+
+
+Mensagem recebida. 
+
+Received\+Message guarda o conteúdo e informações referentes a uma mensagem recebida via socket U\+DP. \mbox{\Hypertarget{server_8h_a2645d40a71683d956e55bcf7a6823530}\label{server_8h_a2645d40a71683d956e55bcf7a6823530}} 
+\index{server.\+h@{server.\+h}!Sockaddr@{Sockaddr}}
+\index{Sockaddr@{Sockaddr}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{Sockaddr}{Sockaddr}}
+{\footnotesize\ttfamily \hyperlink{server_8h_a2645d40a71683d956e55bcf7a6823530}{Sockaddr}}
+
+
+
+Endereço Remoto. 
+
+É utilizado como alias à estrutura sockaddr\+\_\+in da biblioteca netinet/in.\+h. Essa estrutura guarda as informações de endereço remoto de outros sockets. 
+
+\subsection{Funções}
+\mbox{\Hypertarget{server_8h_a7e53f8b1219135aed66d02cb58357748}\label{server_8h_a7e53f8b1219135aed66d02cb58357748}} 
+\index{server.\+h@{server.\+h}!create\+\_\+socket@{create\+\_\+socket}}
+\index{create\+\_\+socket@{create\+\_\+socket}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{create\+\_\+socket()}{create\_socket()}}
+{\footnotesize\ttfamily int create\+\_\+socket (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+
+
+Cria um socket udp. 
+
+Faz a criação de um socket do tipo U\+DP e o associa a porta indicada no argumento {\ttfamily port} .
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em port} & Número da porta U\+DP que será associada a esse socket, deve ser um valor entre 1 e 65536. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} contendo o id do descritor desse socket. Retorna {\bfseries -\/1} em caso de erro.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket != -1) \{
+   printf(\textcolor{stringliteral}{"socket aberto com sucesso.\(\backslash\)n"});
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{server_8h_a0bb0e3e1429bfea5bd877ee3ee42c92c}\label{server_8h_a0bb0e3e1429bfea5bd877ee3ee42c92c}} 
+\index{server.\+h@{server.\+h}!init\+\_\+server@{init\+\_\+server}}
+\index{init\+\_\+server@{init\+\_\+server}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{init\+\_\+server()}{init\_server()}}
+{\footnotesize\ttfamily int init\+\_\+server (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Realiza a inicialização do servidor. 
+
+Essa função é destinada a guardar todas as instruções que devem ser executadas no inicio do programa. Atualmente, ela inicializa o sistema de geração de números aleatórios, para que cada execução do servidor disponha de valores aleatórios diferentes.
+
+\begin{DoxyReturn}{Retorna}
+Não há retorno. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{server_8h_a1ab0d52a5f583e6f915a9dba47c951dd}\label{server_8h_a1ab0d52a5f583e6f915a9dba47c951dd}} 
+\index{server.\+h@{server.\+h}!rand\+\_\+range@{rand\+\_\+range}}
+\index{rand\+\_\+range@{rand\+\_\+range}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{rand\+\_\+range()}{rand\_range()}}
+{\footnotesize\ttfamily int rand\+\_\+range (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Gerador de número aleatório dentro de um intervalo. 
+
+Gera um número aleatório dentro do intervalo \mbox{[} {\ttfamily min} , {\ttfamily max} \mbox{]}
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em min} & Valor mínimo do intervalo \\
+\hline
+{\em max} & Valor máximo do intervalo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} Valor aleatório gerado.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} nro\_aleatorio;
+
+nro\_aleatorio = \hyperlink{server_8h_a1ab0d52a5f583e6f915a9dba47c951dd}{rand\_range}(1,100)
+
+printf("Valor aleatório entre 1 e 100: %d\(\backslash\)n", nro\_aleatorio);
+\end{DoxyCode}
+ \mbox{\Hypertarget{server_8h_a13a547b23638fcaac00857870c985aa7}\label{server_8h_a13a547b23638fcaac00857870c985aa7}} 
+\index{server.\+h@{server.\+h}!receive\+\_\+message@{receive\+\_\+message}}
+\index{receive\+\_\+message@{receive\+\_\+message}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{receive\+\_\+message()}{receive\_message()}}
+{\footnotesize\ttfamily \hyperlink{server_8h_a23f9916b5a27f1dfc760d6a01e0f4bd4}{Received\+Message} receive\+\_\+message (\begin{DoxyParamCaption}\item[{int}]{sockfd }\end{DoxyParamCaption})}
+
+
+
+Espera pela chegada de uma mensagem em um socket. 
+
+Essa função inicia a espera de uma mensagem e {\bfseries bloqueia} o programa nesse estado. O programa só é desbloqueado com a chegada de uma mensagem.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em sockfd} & id do descritor do socket que aguardará por uma mensagem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura {\ttfamily Received\+Message} contendo informações da mensagem que o socket recebeu.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+\hyperlink{structreceived__message}{ReceivedMessage} m;
+
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket == -1)
+\{
+    exit();
+\}
+m = \hyperlink{server_8h_a13a547b23638fcaac00857870c985aa7}{receive\_message}(socket);
+
+printf(\textcolor{stringliteral}{"Mensagem recebida: %s\(\backslash\)n"}, m.\hyperlink{structreceived__message_ada9c34d3c26df419fa3dd0ac2c20e860}{data});
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+O socket enviado por parâmetro deve ter sido criado previamente através da função \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\+\_\+socket()} 
+\end{DoxyWarning}
+\mbox{\Hypertarget{server_8h_af53a5f77518d295f38d03401c8f5e941}\label{server_8h_af53a5f77518d295f38d03401c8f5e941}} 
+\index{server.\+h@{server.\+h}!send\+\_\+message@{send\+\_\+message}}
+\index{send\+\_\+message@{send\+\_\+message}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{send\+\_\+message()}{send\_message()}}
+{\footnotesize\ttfamily void send\+\_\+message (\begin{DoxyParamCaption}\item[{int}]{socket,  }\item[{char $\ast$}]{msg,  }\item[{\hyperlink{server_8h_a2645d40a71683d956e55bcf7a6823530}{Sockaddr}}]{client\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Envia uma mensagem para um endereço via socket udp. 
+
+Função que realiza o envio de uma mensagem de texto via udp. Essa função, diferentemente de {\ttfamily receive\+\_\+message} , é não bloqueante. O que significa que não há confirmação de envio, ela realiza o envio e segue a execução do programa. É utilizada para a comunicação com os clientes conectados.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em socket} & id do descritor do socket que realizará o envio da mensagem. \\
+\hline
+{\em msg} & texto da mensagem a ser enviada. \\
+\hline
+{\em client\+\_\+addr} & Endereço do cliente que será enviada a mensagem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+\textcolor{keywordtype}{char} msg[1024];
+\hyperlink{structreceived__message}{ReceivedMessage} m;
+ 
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket == -1)
+\{
+    exit();
+\}
+\textcolor{comment}{// espera pelo contato de um cliente.}
+m = \hyperlink{server_8h_a13a547b23638fcaac00857870c985aa7}{receive\_message}(socket);
+
+\textcolor{comment}{// envia "HELLO" de volta para o cliente.}
+strcpy(msg, \textcolor{stringliteral}{"HELLO"});
+\hyperlink{server_8h_af53a5f77518d295f38d03401c8f5e941}{send\_message}(socket, msg, m.addr);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+O socket enviado por parâmetro deve ter sido criado previamente através da função \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\+\_\+socket()} 
+\end{DoxyWarning}
+\mbox{\Hypertarget{server_8h_a384b9bb4702634b169c470efe0c867cb}\label{server_8h_a384b9bb4702634b169c470efe0c867cb}} 
+\index{server.\+h@{server.\+h}!wait\+\_\+for\+\_\+login@{wait\+\_\+for\+\_\+login}}
+\index{wait\+\_\+for\+\_\+login@{wait\+\_\+for\+\_\+login}!server.\+h@{server.\+h}}
+\subsubsection{\texorpdfstring{wait\+\_\+for\+\_\+login()}{wait\_for\_login()}}
+{\footnotesize\ttfamily void wait\+\_\+for\+\_\+login (\begin{DoxyParamCaption}\item[{int}]{socket }\end{DoxyParamCaption})}
+
+
+
+Realiza a espera por logins no servidor. 
+
+Essa é a função principal do servidor, fazendo a espera por novas conexões e realizando a alocação de recursos para lidar com os diversos clientes conectados.
+
+Quando um cliente se conecta no servidor, enviando um \char`\"{}\+L\+O\+G\+I\+N\char`\"{} para o mesmo, o servidor responde criando uma thread para tratamento dedicado desse cliente, essa lógica está implementada nessa função.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em socket} & Socket que receberá o login de clientes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+ 
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket == -1)
+\{
+    exit();
+\}
+
+\hyperlink{server_8h_a384b9bb4702634b169c470efe0c867cb}{wait\_for\_login}(socket);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+O socket enviado por parâmetro deve ter sido criado previamente através da função \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\+\_\+socket()} 
+\end{DoxyWarning}

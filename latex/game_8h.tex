@@ -1,0 +1,231 @@
+\hypertarget{game_8h}{}\section{Referência do Arquivo client/include/game.h}
+\label{game_8h}\index{client/include/game.\+h@{client/include/game.\+h}}
+
+
+Arquivo contendo as estruturas e cabeçalhos de funções do jogo.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$player.\+h$>$}\newline
+{\ttfamily \#include $<$board.\+h$>$}\newline
+Gráfico de dependência de inclusões para game.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{game_8h_a5a57193f6315bcd5fea0e885f0bf6db1}{Print\+Score} (int player1\+Wins, int player2\+Wins, int draws, char $\ast$player1\+Name, char $\ast$player2\+Name)
+\begin{DoxyCompactList}\small\item\em Mostrar a pontuação. \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_a89454db40f4a9bfe3fb5fc79ce8bc195}{Print\+Winner} (char $\ast$player\+Character, char $\ast$player1\+Name, char $\ast$player2\+Name, int check)
+\begin{DoxyCompactList}\small\item\em Mostrar a nome do vencedor. \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_ae80136af61d48d4dab91ce44f35f2227}{Play\+Again} (int $\ast$new\+Game)
+\begin{DoxyCompactList}\small\item\em Verificar nova partida. \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_aba7968c984d7d14474110db10edbe709}{Start\+Game} (int number\+Of\+Players)
+\begin{DoxyCompactList}\small\item\em Começar uma partida. \end{DoxyCompactList}\item 
+int \hyperlink{game_8h_ade84e17876e747904e3cc149c9d9d18a}{A\+I\+Play} (char game\+Board\mbox{[}9\mbox{]}, int $\ast$chosen\+Number)
+\begin{DoxyCompactList}\small\item\em Jogada do computador. \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_a8c0cdcbaba5c3fc48e068d3969d264ad}{Player\+Start} (char $\ast$player\+Character, int $\ast$player\+Turn, int number\+Of\+Players, char $\ast$player1\+Name, char $\ast$player2\+Name)
+\begin{DoxyCompactList}\small\item\em Definir primeiro jogador. \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_ac930428cd81e07f378593efa99b169e9}{Update\+Scores} (int check, char $\ast$player\+Character, int $\ast$player1\+Wins, int $\ast$player2\+Wins, int $\ast$draws, char game\+Board\mbox{[}9\mbox{]})
+\begin{DoxyCompactList}\small\item\em Atualiza o marcador de pontos. \end{DoxyCompactList}\item 
+void \hyperlink{game_8h_a5b51b82ff890b5f0c120cf42b1c5b04b}{Play\+Game} (char $\ast$player1\+Name, char $\ast$player2\+Name, int number\+Of\+Players)
+\begin{DoxyCompactList}\small\item\em Implementa o jogo e suas funções. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo contendo as estruturas e cabeçalhos de funções do jogo. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020
+\end{DoxyDate}
+Esse arquivo contém as definições das funções que são implementadas em game.\+c. Essas funções tem como objetivo implementar o jogo tic-\/tac-\/toe (jogo da velha). 
+
+\subsection{Funções}
+\mbox{\Hypertarget{game_8h_ade84e17876e747904e3cc149c9d9d18a}\label{game_8h_ade84e17876e747904e3cc149c9d9d18a}} 
+\index{game.\+h@{game.\+h}!A\+I\+Play@{A\+I\+Play}}
+\index{A\+I\+Play@{A\+I\+Play}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{A\+I\+Play()}{AIPlay()}}
+{\footnotesize\ttfamily int A\+I\+Play (\begin{DoxyParamCaption}\item[{char}]{game\+Board\mbox{[}9\mbox{]},  }\item[{int $\ast$}]{chosen\+Number }\end{DoxyParamCaption})}
+
+
+
+Jogada do computador. 
+
+Implementa e simula a jogada do computador. Só é utilizada esta função quando apenas um jogador esta na partida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em game\+Board} & Array de 9 posições que guarda as informações do tabuleiro \\
+\hline
+{\em chosen\+Number} & Valor da possivel jogada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} Valor escolhido pelo jogador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{game_8h_ae80136af61d48d4dab91ce44f35f2227}\label{game_8h_ae80136af61d48d4dab91ce44f35f2227}} 
+\index{game.\+h@{game.\+h}!Play\+Again@{Play\+Again}}
+\index{Play\+Again@{Play\+Again}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{Play\+Again()}{PlayAgain()}}
+{\footnotesize\ttfamily void Play\+Again (\begin{DoxyParamCaption}\item[{int $\ast$}]{new\+Game }\end{DoxyParamCaption})}
+
+
+
+Verificar nova partida. 
+
+Verifica se o usuario deseja iniciar uma nova partida, caso nao queira, retorna para o menu.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em new\+Game} & Verficador de novo jogo. {\bfseries 1} para começar uma nova partida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_a8c0cdcbaba5c3fc48e068d3969d264ad}\label{game_8h_a8c0cdcbaba5c3fc48e068d3969d264ad}} 
+\index{game.\+h@{game.\+h}!Player\+Start@{Player\+Start}}
+\index{Player\+Start@{Player\+Start}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{Player\+Start()}{PlayerStart()}}
+{\footnotesize\ttfamily void Player\+Start (\begin{DoxyParamCaption}\item[{char $\ast$}]{player\+Character,  }\item[{int $\ast$}]{player\+Turn,  }\item[{int}]{number\+Of\+Players,  }\item[{char $\ast$}]{player1\+Name,  }\item[{char $\ast$}]{player2\+Name }\end{DoxyParamCaption})}
+
+
+
+Definir primeiro jogador. 
+
+Define e mostra na tela qual jogador ira comecar a partida.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+Character} & Caractere do jogador atual \\
+\hline
+{\em player\+Turn} & Define o turno do jogador \\
+\hline
+{\em number\+Of\+Players} & Numero de jogadores na partida \\
+\hline
+{\em player1\+Name} & Nome do jogador numero 1 \\
+\hline
+{\em player2\+Name} & Nome do jogador numero 2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_a5b51b82ff890b5f0c120cf42b1c5b04b}\label{game_8h_a5b51b82ff890b5f0c120cf42b1c5b04b}} 
+\index{game.\+h@{game.\+h}!Play\+Game@{Play\+Game}}
+\index{Play\+Game@{Play\+Game}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{Play\+Game()}{PlayGame()}}
+{\footnotesize\ttfamily void Play\+Game (\begin{DoxyParamCaption}\item[{char $\ast$}]{player1\+Name,  }\item[{char $\ast$}]{player2\+Name,  }\item[{int}]{number\+Of\+Players }\end{DoxyParamCaption})}
+
+
+
+Implementa o jogo e suas funções. 
+
+Funcao que controla o fluxo do jogo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player1\+Name} & Nome do jogador numero 1 \\
+\hline
+{\em player2\+Name} & Nome do jogador numero 2 \\
+\hline
+{\em number\+Of\+Players} & Numero de jogadores na partida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_a5a57193f6315bcd5fea0e885f0bf6db1}\label{game_8h_a5a57193f6315bcd5fea0e885f0bf6db1}} 
+\index{game.\+h@{game.\+h}!Print\+Score@{Print\+Score}}
+\index{Print\+Score@{Print\+Score}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{Print\+Score()}{PrintScore()}}
+{\footnotesize\ttfamily void Print\+Score (\begin{DoxyParamCaption}\item[{int}]{player1\+Wins,  }\item[{int}]{player2\+Wins,  }\item[{int}]{draws,  }\item[{char $\ast$}]{player1\+Name,  }\item[{char $\ast$}]{player2\+Name }\end{DoxyParamCaption})}
+
+
+
+Mostrar a pontuação. 
+
+Escreve a pontuacao atual dos jogadores na tela.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player1\+Wins} & Numero de vitorias do jogador 1 \\
+\hline
+{\em player2\+Wins} & Numero de vitorias do jogador 2 \\
+\hline
+{\em draws} & Numero de empates entre os dois jogadores \\
+\hline
+{\em player1\+Name} & Nome do jogador numero 1 \\
+\hline
+{\em player2\+Name} & Nome do jogador numero 2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_a89454db40f4a9bfe3fb5fc79ce8bc195}\label{game_8h_a89454db40f4a9bfe3fb5fc79ce8bc195}} 
+\index{game.\+h@{game.\+h}!Print\+Winner@{Print\+Winner}}
+\index{Print\+Winner@{Print\+Winner}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{Print\+Winner()}{PrintWinner()}}
+{\footnotesize\ttfamily void Print\+Winner (\begin{DoxyParamCaption}\item[{char $\ast$}]{player\+Character,  }\item[{char $\ast$}]{player1\+Name,  }\item[{char $\ast$}]{player2\+Name,  }\item[{int}]{check }\end{DoxyParamCaption})}
+
+
+
+Mostrar a nome do vencedor. 
+
+Escreve na tela o nome do vencedor, se houve algum, ou se houve empate
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em player\+Character} & Caractere do joogador. Pode ser {\bfseries X} ou {\bfseries O} \\
+\hline
+{\em player1\+Name} & Nome do jogador 1 \\
+\hline
+{\em player2\+Name} & Nome do jogador 2 \\
+\hline
+{\em check} & Verificador de vitoria ou empate. {\bfseries 1} se houver vencedo ou {\bfseries 2} se for um empate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_aba7968c984d7d14474110db10edbe709}\label{game_8h_aba7968c984d7d14474110db10edbe709}} 
+\index{game.\+h@{game.\+h}!Start\+Game@{Start\+Game}}
+\index{Start\+Game@{Start\+Game}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{Start\+Game()}{StartGame()}}
+{\footnotesize\ttfamily void Start\+Game (\begin{DoxyParamCaption}\item[{int}]{number\+Of\+Players }\end{DoxyParamCaption})}
+
+
+
+Começar uma partida. 
+
+Define do nome dos jogadores e chama a funcao de inicio do jogo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em number\+Of\+Players} & Numero de jogadores na partida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8h_ac930428cd81e07f378593efa99b169e9}\label{game_8h_ac930428cd81e07f378593efa99b169e9}} 
+\index{game.\+h@{game.\+h}!Update\+Scores@{Update\+Scores}}
+\index{Update\+Scores@{Update\+Scores}!game.\+h@{game.\+h}}
+\subsubsection{\texorpdfstring{Update\+Scores()}{UpdateScores()}}
+{\footnotesize\ttfamily void Update\+Scores (\begin{DoxyParamCaption}\item[{int}]{check,  }\item[{char $\ast$}]{player\+Character,  }\item[{int $\ast$}]{player1\+Wins,  }\item[{int $\ast$}]{player2\+Wins,  }\item[{int $\ast$}]{draws,  }\item[{char}]{game\+Board\mbox{[}9\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Atualiza o marcador de pontos. 
+
+Atualiza os placares e altera o valor da variavel que controla o loop (win).
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em check} & Verificador de vitoria ou empate. {\bfseries 1} se houver vencedo ou {\bfseries 2} se for um empate \\
+\hline
+{\em player\+Character} & Caractere do joogador. Pode ser {\bfseries X} ou {\bfseries O} \\
+\hline
+{\em player1\+Wins} & Numero de vitorias do jogador 1 \\
+\hline
+{\em player2\+Wins} & Numero de vitorias do jogador 2 \\
+\hline
+{\em draws} & Numero de empates entre os dois jogadores \\
+\hline
+{\em game\+Board} & Array de 9 posições que guarda as informações do tabuleiro \\
+\hline
+\end{DoxyParams}

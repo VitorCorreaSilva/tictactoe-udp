@@ -1,0 +1,82 @@
+\hypertarget{server_8c}{}\section{Referência do Arquivo server/src/server.c}
+\label{server_8c}\index{server/src/server.\+c@{server/src/server.\+c}}
+
+
+Implementação das funções do servidor.  
+
+
+{\ttfamily \#include $<$server.\+h$>$}\newline
+{\ttfamily \#include $<$client\+\_\+thread.\+h$>$}\newline
+Gráfico de dependência de inclusões para server.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{server_8c_a0a489ba30d8a8b9903c80eccf0384f3b}{show\+\_\+usage} (char $\ast$bin\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Exibe mensagem de utilização. \end{DoxyCompactList}\item 
+int \hyperlink{server_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Função main do servidor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Implementação das funções do servidor. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020 
+\end{DoxyDate}
+
+
+\subsection{Funções}
+\mbox{\Hypertarget{server_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{server_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{server.\+c@{server.\+c}!main@{main}}
+\index{main@{main}!server.\+c@{server.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Função main do servidor. 
+
+Realiza a leitura dos parâmetros de linha de comando, e valida-\/os. Caso os parâmetros sejam incorretos, exibe a mensagem de utilização chamando a função {\ttfamily show\+\_\+usage} 
+
+Após isso, a função main realiza a inicialização do servidor chamando as funções {\ttfamily init\+\_\+server} e {\ttfamily init\+\_\+shared\+\_\+variables} , cria um socket e inicia a espera por logins através da função 
+
+Caso os parâmetros sejam válidos
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em argc} & Número de argumentos passados por parâmetro \\
+\hline
+{\em argv} & Array de argumentos do tipo $\ast$char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{server_8c_a0a489ba30d8a8b9903c80eccf0384f3b}\label{server_8c_a0a489ba30d8a8b9903c80eccf0384f3b}} 
+\index{server.\+c@{server.\+c}!show\+\_\+usage@{show\+\_\+usage}}
+\index{show\+\_\+usage@{show\+\_\+usage}!server.\+c@{server.\+c}}
+\subsubsection{\texorpdfstring{show\+\_\+usage()}{show\_usage()}}
+{\footnotesize\ttfamily void show\+\_\+usage (\begin{DoxyParamCaption}\item[{char $\ast$}]{bin\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Exibe mensagem de utilização. 
+
+Exibe a mensagem de utilização\+: \begin{DoxyVerb}usage: ./server <int: port> \end{DoxyVerb}
+
+
+Se o nome do binário passado por argumento for \char`\"{}./server\char`\"{}, obviamente. 
+\begin{DoxyParams}{Parâmetros}
+{\em bin\+\_\+name} & Nome do binário que foi executado \\
+\hline
+\end{DoxyParams}

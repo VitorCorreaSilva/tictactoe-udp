@@ -1,0 +1,342 @@
+\hypertarget{client_8h}{}\section{Referência do Arquivo client/include/client.h}
+\label{client_8h}\index{client/include/client.\+h@{client/include/client.\+h}}
+
+
+Arquivo contendo as estruturas e cabeçalhos de funções do cliente.  
+
+
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$ifaddrs.\+h$>$}\newline
+{\ttfamily \#include $<$net/if.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$sys/termios.\+h$>$}\newline
+{\ttfamily \#include $<$menu.\+h$>$}\newline
+Gráfico de dependência de inclusões para client.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{client_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Estruturas de Dados}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmessagem}{messagem}
+\end{DoxyCompactItemize}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{client_8h_a4af527b772cacbae6d6a0e48c3dcf53f}\label{client_8h_a4af527b772cacbae6d6a0e48c3dcf53f}} 
+\#define {\bfseries T\+A\+M\+\_\+\+M\+SG}~1024
+\end{DoxyCompactItemize}
+\subsection*{Definições de Tipos}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structmessagem}{messagem} \hyperlink{client_8h_a13d6eab42ea1147a3b4b74bbec7a336b}{Mensagem}
+\begin{DoxyCompactList}\small\item\em Mensagem recebida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{client_8h_ad38905c5727913b84d4ba2c3982c03dc}{create\+\_\+client\+\_\+socket} (void)
+\begin{DoxyCompactList}\small\item\em Cria um socket udp. \end{DoxyCompactList}\item 
+int \hyperlink{client_8h_a1ab0d52a5f583e6f915a9dba47c951dd}{rand\+\_\+range} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Gerador de número aleatório dentro de um intervalo. \end{DoxyCompactList}\item 
+\hyperlink{client_8h_a13d6eab42ea1147a3b4b74bbec7a336b}{Mensagem} \hyperlink{client_8h_adef25c5e886373a98ba508568deb2d8a}{receive\+\_\+message} (int sockfd)
+\begin{DoxyCompactList}\small\item\em Espera pela chegada de uma mensagem em um socket. \end{DoxyCompactList}\item 
+int \hyperlink{client_8h_a7f26bc4fe6b5efd6b64e1edc39b7465c}{envia\+\_\+mensagem} (int socketfd, char $\ast$msg, char $\ast$host, int port)
+\begin{DoxyCompactList}\small\item\em Envia uma mensagem para um endereço via socket udp. \end{DoxyCompactList}\item 
+int \hyperlink{client_8h_a183fbb1ab8be41f5bf8011b67bca7c20}{login} (int socket, char $\ast$host, int port)
+\begin{DoxyCompactList}\small\item\em Realiza o login no servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{client_8h_afb06e752d0facf30119fa60471bce565}\label{client_8h_afb06e752d0facf30119fa60471bce565}} 
+int \hyperlink{client_8h_afb06e752d0facf30119fa60471bce565}{play\+\_\+tictactoe} (int socket, char $\ast$host, int port)
+\begin{DoxyCompactList}\small\item\em Implementa com o uso das outras funções o jogo. \end{DoxyCompactList}\item 
+void \hyperlink{client_8h_af5fb66f96b329174a0e8887f9209da5b}{clear\+\_\+stdin} (void)
+\begin{DoxyCompactList}\small\item\em Limpa caracteres. \end{DoxyCompactList}\item 
+void \hyperlink{client_8h_aebd00ba894071e030e959c4b18353634}{disconnect} (int socket, char $\ast$host, int port)
+\begin{DoxyCompactList}\small\item\em Desconecta do socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo contendo as estruturas e cabeçalhos de funções do cliente. 
+
+\begin{DoxyAuthor}{Autor}
+Vitor Correa da Silva 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Data}
+29 May 2020
+\end{DoxyDate}
+Esse arquivo contém as definições das funções que são implementadas em client.\+c. Essas funções tem como objetivo implementar um client udp que faz login no servidor, envia e recebe mensagens. 
+
+\subsection{Definições dos tipos}
+\mbox{\Hypertarget{client_8h_a13d6eab42ea1147a3b4b74bbec7a336b}\label{client_8h_a13d6eab42ea1147a3b4b74bbec7a336b}} 
+\index{client.\+h@{client.\+h}!Mensagem@{Mensagem}}
+\index{Mensagem@{Mensagem}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{Mensagem}{Mensagem}}
+{\footnotesize\ttfamily \hyperlink{client_8h_a13d6eab42ea1147a3b4b74bbec7a336b}{Mensagem}}
+
+
+
+Mensagem recebida. 
+
+Mensagem guarda o conteúdo e informações referentes a uma mensagem recebida via socket U\+DP. 
+
+\subsection{Funções}
+\mbox{\Hypertarget{client_8h_af5fb66f96b329174a0e8887f9209da5b}\label{client_8h_af5fb66f96b329174a0e8887f9209da5b}} 
+\index{client.\+h@{client.\+h}!clear\+\_\+stdin@{clear\+\_\+stdin}}
+\index{clear\+\_\+stdin@{clear\+\_\+stdin}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{clear\+\_\+stdin()}{clear\_stdin()}}
+{\footnotesize\ttfamily void clear\+\_\+stdin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Limpa caracteres. 
+
+Limpa as entradas de teclado desnecessarias que ficam salvas depois que é realizado o scanf
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em void} & Não há parametros \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{client_8h_ad38905c5727913b84d4ba2c3982c03dc}\label{client_8h_ad38905c5727913b84d4ba2c3982c03dc}} 
+\index{client.\+h@{client.\+h}!create\+\_\+client\+\_\+socket@{create\+\_\+client\+\_\+socket}}
+\index{create\+\_\+client\+\_\+socket@{create\+\_\+client\+\_\+socket}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{create\+\_\+client\+\_\+socket()}{create\_client\_socket()}}
+{\footnotesize\ttfamily int create\+\_\+client\+\_\+socket (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Cria um socket udp. 
+
+Faz a criação de um socket do tipo U\+DP e o associa a porta indicada no argumento {\ttfamily port} .
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em void} & Não há parametros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} contendo o id do descritor desse socket. Retorna {\bfseries -\/1} em caso de erro.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket != -1) \{
+   printf(\textcolor{stringliteral}{"socket aberto com sucesso.\(\backslash\)n"});
+\}
+\end{DoxyCode}
+ \mbox{\Hypertarget{client_8h_aebd00ba894071e030e959c4b18353634}\label{client_8h_aebd00ba894071e030e959c4b18353634}} 
+\index{client.\+h@{client.\+h}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void disconnect (\begin{DoxyParamCaption}\item[{int}]{socket,  }\item[{char $\ast$}]{host,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+
+
+Desconecta do socket. 
+
+Envia mensagem para o servidor para se desconectar
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em socket} & id do descritor do socket que realizará o envio da mensagem. \\
+\hline
+{\em host} & Host de conexao com o servidor \\
+\hline
+{\em port} & porta de conexão com o servidor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno 
+\end{DoxyReturn}
+\mbox{\Hypertarget{client_8h_a7f26bc4fe6b5efd6b64e1edc39b7465c}\label{client_8h_a7f26bc4fe6b5efd6b64e1edc39b7465c}} 
+\index{client.\+h@{client.\+h}!envia\+\_\+mensagem@{envia\+\_\+mensagem}}
+\index{envia\+\_\+mensagem@{envia\+\_\+mensagem}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{envia\+\_\+mensagem()}{envia\_mensagem()}}
+{\footnotesize\ttfamily int envia\+\_\+mensagem (\begin{DoxyParamCaption}\item[{int}]{socketfd,  }\item[{char $\ast$}]{msg,  }\item[{char $\ast$}]{host,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+
+
+Envia uma mensagem para um endereço via socket udp. 
+
+Função que realiza o envio de uma mensagem de texto via udp. Não há confirmação de envio, ela realiza o envio e segue a execução do programa. É utilizada para a comunicação com o servidor.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em socketfd} & id do descritor do socket que realizará o envio da mensagem. \\
+\hline
+{\em msg} & texto da mensagem a ser enviada. \\
+\hline
+{\em host} & Endereço do cliente que será enviada a mensagem. \\
+\hline
+{\em host} & Porta de conexão com o cliente que receberá a mensagem \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Não há retorno.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+\textcolor{keywordtype}{char} msg[1024];
+\hyperlink{structreceived__message}{ReceivedMessage} m;
+ 
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket == -1)
+\{
+    exit();
+\}
+\textcolor{comment}{// espera pelo contato de um cliente.}
+m = \hyperlink{server_8h_a13a547b23638fcaac00857870c985aa7}{receive\_message}(socket);
+
+\textcolor{comment}{// envia "HELLO" de volta para o cliente.}
+strcpy(msg, \textcolor{stringliteral}{"HELLO"});
+\hyperlink{server_8h_af53a5f77518d295f38d03401c8f5e941}{send\_message}(socket, msg, m.addr);
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+O socket enviado por parâmetro deve ter sido criado previamente através da função \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\+\_\+socket()} 
+\end{DoxyWarning}
+\mbox{\Hypertarget{client_8h_a183fbb1ab8be41f5bf8011b67bca7c20}\label{client_8h_a183fbb1ab8be41f5bf8011b67bca7c20}} 
+\index{client.\+h@{client.\+h}!login@{login}}
+\index{login@{login}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily int login (\begin{DoxyParamCaption}\item[{int}]{socket,  }\item[{char $\ast$}]{host,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+
+
+Realiza o login no servidor. 
+
+Envia um pedido de login para o servidor e espera pela porta que será usada para começar o jogo.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em socket} & id do descritor do socket que realizará o envio da mensagem. \\
+\hline
+{\em host} & Host de conexao com o servidor \\
+\hline
+{\em port} & porta de conexão com o servidor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+retorna o numero da porta que sera utilizadao para jogar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{client_8h_a1ab0d52a5f583e6f915a9dba47c951dd}\label{client_8h_a1ab0d52a5f583e6f915a9dba47c951dd}} 
+\index{client.\+h@{client.\+h}!rand\+\_\+range@{rand\+\_\+range}}
+\index{rand\+\_\+range@{rand\+\_\+range}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{rand\+\_\+range()}{rand\_range()}}
+{\footnotesize\ttfamily int rand\+\_\+range (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Gerador de número aleatório dentro de um intervalo. 
+
+Gera um número aleatório dentro do intervalo \mbox{[} {\ttfamily min} , {\ttfamily max} \mbox{]}
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em min} & Valor mínimo do intervalo \\
+\hline
+{\em max} & Valor máximo do intervalo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+{\ttfamily int} Valor aleatório gerado.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} nro\_aleatorio;
+
+nro\_aleatorio = \hyperlink{server_8h_a1ab0d52a5f583e6f915a9dba47c951dd}{rand\_range}(1,100)
+
+printf("Valor aleatório entre 1 e 100: %d\(\backslash\)n", nro\_aleatorio);
+\end{DoxyCode}
+ \mbox{\Hypertarget{client_8h_adef25c5e886373a98ba508568deb2d8a}\label{client_8h_adef25c5e886373a98ba508568deb2d8a}} 
+\index{client.\+h@{client.\+h}!receive\+\_\+message@{receive\+\_\+message}}
+\index{receive\+\_\+message@{receive\+\_\+message}!client.\+h@{client.\+h}}
+\subsubsection{\texorpdfstring{receive\+\_\+message()}{receive\_message()}}
+{\footnotesize\ttfamily \hyperlink{client_8h_a13d6eab42ea1147a3b4b74bbec7a336b}{Mensagem} receive\+\_\+message (\begin{DoxyParamCaption}\item[{int}]{sockfd }\end{DoxyParamCaption})}
+
+
+
+Espera pela chegada de uma mensagem em um socket. 
+
+Essa função inicia a espera de uma mensagem.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em sockfd} & id do descritor do socket que aguardará por uma mensagem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura {\ttfamily Mensagem} contendo informações da mensagem que o socket recebeu.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+\hyperlink{structmessagem}{Mensagem} m;
+
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket == -1)
+\{
+    exit();
+\}
+m = \hyperlink{server_8h_a13a547b23638fcaac00857870c985aa7}{receive\_message}(socket);
+
+printf(\textcolor{stringliteral}{"Mensagem recebida: %s\(\backslash\)n"}, m.\hyperlink{structmessagem_a23e2fc404fdd389c4ff6da925ab4ae21}{data});
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+O socket enviado por parâmetro deve ter sido criado previamente através da função \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\+\_\+socket()}
+\end{DoxyWarning}
+Essa função inicia a espera de uma mensagem e {\bfseries bloqueia} o programa nesse estado. O programa só é desbloqueado com a chegada de uma mensagem.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em sockfd} & id do descritor do socket que aguardará por uma mensagem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+Estrutura {\ttfamily Received\+Message} contendo informações da mensagem que o socket recebeu.
+\end{DoxyReturn}
+{\bfseries Exemplo de uso\+:} 
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} socket;
+\hyperlink{structreceived__message}{ReceivedMessage} m;
+
+socket = \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\_socket}(80);
+\textcolor{keywordflow}{if} (socket == -1)
+\{
+    exit();
+\}
+m = \hyperlink{server_8h_a13a547b23638fcaac00857870c985aa7}{receive\_message}(socket);
+
+printf(\textcolor{stringliteral}{"Mensagem recebida: %s\(\backslash\)n"}, m.\hyperlink{structreceived__message_ada9c34d3c26df419fa3dd0ac2c20e860}{data});
+\end{DoxyCode}
+
+
+\begin{DoxyWarning}{Aviso}
+O socket enviado por parâmetro deve ter sido criado previamente através da função \hyperlink{server_8h_a7e53f8b1219135aed66d02cb58357748}{create\+\_\+socket()} 
+\end{DoxyWarning}

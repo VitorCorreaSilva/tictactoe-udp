@@ -1,24 +1,26 @@
 #include <board.h>
 
+void clear_screen( void )
+{
+	printf("\e[1;1H\e[2J");
+}
+
 //Limpa o console e desenha o tabuleiro
 void DrawBoard(char gameBoard[9])
 {
-  if(system("clear") == 0)
-  {
+	clear_screen();
 	printf(" %c | %c | %c ", gameBoard[0], gameBoard[1], gameBoard[2]);
 	printf("\n----------\n");
 	printf(" %c | %c | %c ", gameBoard[3], gameBoard[4], gameBoard[5]);
 	printf("\n----------\n");
 	printf(" %c | %c | %c ", gameBoard[6], gameBoard[7], gameBoard[8]);
 	printf("\n");
-  }
 }
 
 //Versão alternativa da função anterior, para caso seja necessário informar de qual jogador é a vez
 void DrawBoardWithNames(char gameBoard[9], char *player1Name, char *player2Name, char *playerCharacter)
 {
-  if(system("clear") == 0)
-  {
+	clear_screen();
 	//Verifica quem está jogando e mostra o nome correspondente
 	if(*playerCharacter == 'X')
 	{
@@ -33,7 +35,6 @@ void DrawBoardWithNames(char gameBoard[9], char *player1Name, char *player2Name,
 	printf(" %c | %c | %c ", gameBoard[3], gameBoard[4], gameBoard[5]);
 	printf("\n----------\n");
 	printf(" %c | %c | %c ", gameBoard[6], gameBoard[7], gameBoard[8]);
-  }
 }
 
 /**/

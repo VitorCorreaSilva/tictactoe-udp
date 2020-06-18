@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UDP Tic-Tac-Toe: Referência do Arquivo server/src/client_thread.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">UDP Tic-Tac-Toe
+   </div>
+   <div id="projectbrief">Jogo da velha local ou remoto</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_41e1742e44e2de38b3bc91f993fed282.html">server</a></li><li class="navelem"><a class="el" href="dir_a063914ab482288b7b0e1b2fca86158c.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo client_thread.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação das funções de conexão via thread dedicada.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="server_8h_source.html">server.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="client__thread_8h_source.html">client_thread.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para client_thread.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="client__thread_8c__incl.png" border="0" usemap="#server_2src_2client__thread_8c" alt=""/></div>
+<map name="server_2src_2client__thread_8c" id="server_2src_2client__thread_8c">
+<area shape="rect" id="node2" href="server_8h.html" title="Arquivo contendo as estruturas e cabeçalhos de funções do servidor. " alt="" coords="249,80,318,107"/>
+<area shape="rect" id="node9" href="client__thread_8h.html" title="Arquivo contendo cabeçalhos de funções que implementam as interações do servidor com os clientes cone..." alt="" coords="342,80,449,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a43fa9860b35567cb80937bd816df385f"><td class="memItemLeft" align="right" valign="top"><a id="a43fa9860b35567cb80937bd816df385f"></a>
+<a class="el" href="server_8h.html#a4ec25c3351f43b6c631aedeb9e14d46a">Game</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tictactoe</b> [NRO_PARTIDAS_SIMULTANEAS]</td></tr>
+<tr class="separator:a43fa9860b35567cb80937bd816df385f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0abaf4b5d42c4e5d19190035fade3599"><td class="memItemLeft" align="right" valign="top"><a id="a0abaf4b5d42c4e5d19190035fade3599"></a>
+pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><b>lock</b></td></tr>
+<tr class="separator:a0abaf4b5d42c4e5d19190035fade3599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
+<div class="textblock"><p>Implementação das funções de conexão via thread dedicada. </p>
+<dl class="section author"><dt>Autor</dt><dd>Vitor Correa da Silva </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>29 May 2020 </dd></dl>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
